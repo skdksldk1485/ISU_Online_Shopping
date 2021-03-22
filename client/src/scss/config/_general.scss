@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Nunito:wght@200;400;600&display=swap');
+
+// General
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 12px;
+  color: $white-color;
+  background-color: $dark-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $light-color;
+  }
+}
+
+.loading {
+  width: 300px;
+  text-align: center;
+  margin: auto;
+}
+
+.error {
+  color: $danger-color;
+  font-size: 1rem;
+}
+
+.success {
+  color: $success-color;
+  font-size: 1rem;
+}
+
+.select {
+  width: 40px;
+  padding: 5px;
+  outline: none;
+  border-color: $primary-color;
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* List */
+.list {
+  margin: 0.5rem 0;
+}
+
+.list li {
+  padding-bottom: 0.3rem;
+}
+
+/* Padding */
+.p {
+  padding: 0.5rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.py {
+  padding: 0.5rem 0;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+.py-5 {
+  padding: 5rem 0;
+}
+
+/* Margin */
+.m {
+  margin: 0.5rem;
+}
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 2rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.my {
+  margin: 0.5rem 0;
+}
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
