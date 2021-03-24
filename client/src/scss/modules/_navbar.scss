@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap');
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+
+  &__toggle-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 20px;
+    color: $white-color;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: none;
+    cursor: pointer;
+  }
+
+  a {
+    color: $dark-color;
+  }
+
+  &__logo {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+  }
+
+  &__search {
+    input {
+      font-size: 1rem;
+      outline: 0;
+      border-width: 0 0 2px;
+      height: 2rem;
+      width: 800px;
+      margin-right: 1rem;
+    }
+
+    &__btn {
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      font-size: 1.2rem;
+    }
+
+    @include atMobile {
+      input {
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        width: 200px;
+      }
+
+      &__btn {
+        font-size: 0.8rem;
+      }
+    }
+
+    @include atTablets {
+      input {
+        margin-top: 2rem;
+        width: 300px;
+      }
+
+      &__btn {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+
+    li {
+      padding: 0 1rem;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+
+      .dropdown__profile {
+        text-align: center;
+        &:hover {
+          color: $secondary-color;
+          cursor: pointer;
+        }
+      }
+
+      .dropdown__content {
+        display: none;
+        position: absolute;
+        padding: 5px;
+        min-width: 80px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        text-align: center;
+
+        &__item {
+          margin-bottom: 4px;
+          cursor: pointer;
+        }
+
+        &__logout:hover {
+          color: $secondary-color;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .dropdown:hover .dropdown__content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @include atTablets {
+    .nav__logo {
+      font-size: 2rem;
+    }
+    .nav__items {
+      li {
+        padding: 0 0.8rem;
+      }
+    }
+  }
+
+  &--dark,
+  &--dark a {
+    color: white;
+  }
+}
+
+@include atMobile {
+  .nav {
+    padding: 0.75rem 2rem;
+    display: block;
+    background-color: $dark-color;
+    width: 100%;
+    color: $white-color;
+
+    a {
+      color: $white-color;
+    }
+
+    .nav__logo {
+      font-size: 1.5rem;
+      display: block;
+    }
+
+    &__toggle-btn {
+      display: block;
+    }
+
+    .nav__items {
+      margin: auto;
+      display: block;
+      text-align: center;
+      display: none;
+
+      &-open {
+        display: block;
+      }
+
+      li {
+        margin: 1rem 0;
+      }
+
+      .dropdown {
+        position: relative;
+
+        &__content {
+          position: relative;
+        }
+      }
+    }
+  }
+}
