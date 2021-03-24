@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  max-width: 1500px;
+  padding: 10rem 0;
+  margin: auto;
+  text-align: center;
+
+  @include atMobile {
+    padding: 6rem 1rem;
+  }
+
+  @include atTablets {
+    padding: 8rem 1rem;
+  }
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+}

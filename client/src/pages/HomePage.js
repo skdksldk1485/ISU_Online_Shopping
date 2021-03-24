@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-const HomeScreen = () => {
+const HomePage = () => {
   const [email, setEmail] = useState('');
 
   const refSlide1 = useRef(null);
@@ -190,4 +190,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default HomePage;

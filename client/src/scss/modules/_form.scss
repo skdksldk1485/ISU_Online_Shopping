@@ -1,0 +1,117 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 500px;
+    height: 30px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid $primary-color;
+  }
+
+  &__title {
+    margin-top: 3.8rem;
+  }
+
+  &__content {
+    margin: 1.6rem 0;
+
+    &__upload {
+      input {
+        padding-top: 3px;
+      }
+    }
+
+    &__subtitle {
+      margin-top: 1rem;
+    }
+
+    &__comment {
+      textarea {
+        width: 480px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__checkout__nav {
+    font-weight: 800;
+    margin: 16px 300px;
+    span {
+      margin-right: 2rem;
+    }
+
+    &__disabled {
+      color: $primary-color;
+    }
+  }
+
+  &__checkout__content {
+    margin-bottom: 1rem;
+  }
+
+  &__btn {
+    margin-top: 1rem;
+  }
+
+  &__table__container {
+    margin-bottom: 4rem;
+  }
+
+  &__table {
+    margin-top: 1.8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include atMobile {
+    input {
+      width: 280px;
+    }
+
+    &__content {
+      &__comment {
+        textarea {
+          width: 280px;
+        }
+      }
+    }
+
+    &__title {
+      margin-top: 1rem;
+    }
+
+    &__checkout__nav {
+      margin: 10px 5px;
+      span {
+        margin-right: 1rem;
+      }
+    }
+
+    &__table {
+      font-size: 0.2rem;
+    }
+
+    button {
+      font-size: 0.2rem;
+    }
+  }
+
+  @include atTablets {
+    input {
+      width: 280px;
+    }
+
+    &__title {
+      margin-top: 1rem;
+    }
+
+    &__checkout__nav {
+      margin: 40px 100px;
+      span {
+        margin-right: 1.6rem;
+      }
+    }
+  }
+}
