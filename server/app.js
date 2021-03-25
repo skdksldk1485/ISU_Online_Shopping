@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import connectDB from './config/db.js';
 
-
+import userRoutes from './routes/userRoutes.js';
 
 var app = express();
 
@@ -13,6 +13,9 @@ dotenv.config();
 
 connectDB();
 
+
+app.use(express.json());
+app.use('/api/users', userRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
