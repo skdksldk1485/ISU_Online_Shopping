@@ -1,0 +1,74 @@
+.productLanding__filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .active {
+    color: $primary-color;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__item {
+    margin-right: 1rem;
+  }
+
+  @include atMobile {
+    flex-direction: column;
+  }
+}
+
+.productLanding__title {
+  font-size: 1rem;
+  margin: 2rem 0;
+
+  @include atMobile {
+    font-size: 0.8rem;
+    margin: 0 0 1rem 0;
+  }
+
+  @include atTablets {
+    margin: 1rem 0;
+  }
+}
+
+.rating span {
+  margin: 0.1rem;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .product {
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @include atMobile {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+    .product {
+      padding: 0.2rem;
+      font-size: 0.4rem;
+    }
+  }
+
+  @include atTablets {
+    grid-template-columns: repeat(3, 1fr);
+    .product {
+      padding: 0.4rem;
+      font-size: 0.6rem;
+    }
+  }
+}
