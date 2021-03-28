@@ -7,7 +7,8 @@ import {
   userRegisterReducer
 } from './reducers/userReducers';
 import {
-  productListReducer
+  productListReducer,
+  productDeleteReducer
 } from './reducers/productReducers';
 import { logger } from 'redux-logger';
 
@@ -16,7 +17,8 @@ import { logger } from 'redux-logger';
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
-  productList: productListReducer
+  productList: productListReducer,
+  productDelete: productDeleteReducer
 });
 
 const userInfoFromStorage = localStorage.getItem('userInfo')

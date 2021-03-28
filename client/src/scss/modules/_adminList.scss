@@ -1,0 +1,51 @@
+.admin__list__title {
+  margin: 1rem 0;
+}
+
+.admin__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+
+  &__table {
+    margin-top: 2rem;
+  }
+
+  td,
+  th {
+    padding-right: 2rem;
+  }
+
+  &__edit {
+    color: $dark-color;
+    background-color: $white-color;
+  }
+
+  button {
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    padding: 1px;
+    border: 1px solid $dark-color;
+  }
+
+  @include atMobile {
+    margin: auto;
+    font-size: 0.6rem;
+
+    td,
+    th {
+      padding-right: 0;
+    }
+
+    button {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
