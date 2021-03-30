@@ -6,10 +6,11 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductListPage from './pages/ProductListPage';
+import ProductCreatePage from './pages/ProductCreatePage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="wrapper">
       <Router>
         <Header />
         <main>
@@ -26,6 +27,11 @@ function App() {
             exact
             path='/admin/productlist/:pageNumber'
             component={ProductListPage}
+          />
+          <Route
+            exact
+            path='/admin/product/create'
+            component={ProductCreatePage}
           />
         </main>
 
