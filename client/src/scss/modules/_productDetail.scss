@@ -1,0 +1,114 @@
+.productDeatil {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  font-weight: 500;
+
+  img {
+    width: 500px;
+  }
+
+  .description-box {
+    margin: 50px;
+    width: 400px;
+
+    .description {
+      margin: 20px 0;
+    }
+
+    .in-stock {
+      color: $success-color;
+    }
+
+    .sold-out {
+      color: $danger-color;
+    }
+
+    .quantity {
+      margin-bottom: 20px;
+
+      span {
+        margin-right: 5px;
+      }
+    }
+
+    .btn {
+      width: 400px;
+      height: 40px;
+    }
+
+    .disabled {
+      display: none;
+    }
+  }
+
+  @include atMobile {
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 300px;
+    }
+    .description-box {
+      width: 280px;
+      margin: 20px 0;
+
+      .btn {
+        width: 280px;
+      }
+    }
+  }
+
+  @include atTablets {
+    padding-top: 100px;
+    img {
+      width: 300px;
+    }
+    .description-box {
+      width: 300px;
+      margin: 20px;
+
+      .btn {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.productDetail__review {
+  margin-top: 3rem;
+
+  &__container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    & > * {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    &__item {
+      margin: 1rem 1rem 0 1rem;
+    }
+
+    &__item__content {
+      margin: 1rem 1rem 0 1rem;
+      flex-grow: 4;
+    }
+
+    @include atMobile {
+      flex-direction: column;
+
+      &__item__content {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.productDetail__review__create {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}

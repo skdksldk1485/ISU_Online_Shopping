@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductListPage from './pages/ProductListPage';
 import ProductCreatePage from './pages/ProductCreatePage';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             path='/admin/product/create'
             component={ProductCreatePage}
           />
+          <Route exact path='/shop/product/:id' component={ProductDetail} />
         </main>
 
       </Router>
