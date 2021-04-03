@@ -8,6 +8,7 @@ import ProductsPage from './pages/ProductsPage';
 import ProductListPage from './pages/ProductListPage';
 import ProductCreatePage from './pages/ProductCreatePage';
 import ProductDetail from './pages/ProductDetail';
+import SearchPage from './pages/SearchPage';
 
 function App() {
   return (
@@ -45,6 +46,17 @@ function App() {
             component={ProductsPage}
           />
           <Route exact path='/shop/product/:id' component={ProductDetail} />
+          <Route exact path='/shop/search' component={SearchPage} />
+          <Route
+            exact
+            path='/shop/search/:keyword'
+            component={ProductsPage}
+          />
+          <Route
+            exact
+            path='/shop/search/:keyword/page/:pageNumber'
+            component={ProductsPage}
+          />
         </main>
 
       </Router>
