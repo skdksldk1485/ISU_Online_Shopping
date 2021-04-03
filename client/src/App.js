@@ -21,6 +21,11 @@ function App() {
           <Route exact path='/shop' component={ProductsPage} />
           <Route
             exact
+            path='/shop/page/:pageNumber'
+            component={ProductsPage}
+          />
+          <Route
+            exact
             path='/admin/productlist'
             component={ProductListPage}
           />
@@ -33,6 +38,11 @@ function App() {
             exact
             path='/admin/product/create'
             component={ProductCreatePage}
+          />
+          <Route
+            exact
+            path='/shop/category/:category'
+            component={ProductsPage}
           />
           <Route exact path='/shop/product/:id' component={ProductDetail} />
         </main>

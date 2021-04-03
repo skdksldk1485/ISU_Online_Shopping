@@ -20,7 +20,7 @@ const Paginate = ({ pages, page, isAdmin = false, keyword = '', category }) => {
   };
 
   return (
-    pages > 1 && (
+    pages > 0 && (
       <div className='pagination'>
         {[...Array(pages).keys()].map(x => (
           <div key={x + 1} className='pagination__item'>
