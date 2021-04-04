@@ -4,13 +4,19 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import {
   userLoginReducer,
-  userRegisterReducer
+  userRegisterReducer,
+  userDetailsReducer,
+  userUpdateProfileReducer,
+  userListReducer,
+  userDeleteReducer,
+  userUpdateReducer
 } from './reducers/userReducers';
 import {
   productListReducer,
   productDeleteReducer,
   productCreateReducer,
   productDetailsReducer,
+  productUpdateReducer,
   productReviewCreateReducer
 } from './reducers/productReducers';
 import { logger } from 'redux-logger';
@@ -20,8 +26,14 @@ import { logger } from 'redux-logger';
 const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer,
+  userList: userListReducer,
+  userDelete: userDeleteReducer,
+  userUpdate: userUpdateReducer,
   productList: productListReducer,
   productDelete: productDeleteReducer,
+  productUpdate: productUpdateReducer,
   productCreate: productCreateReducer,
   productDetails: productDetailsReducer,
   productReviewCreate: productReviewCreateReducer

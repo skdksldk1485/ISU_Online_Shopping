@@ -8,7 +8,9 @@ import ProductsPage from './pages/ProductsPage';
 import ProductListPage from './pages/ProductListPage';
 import ProductCreatePage from './pages/ProductCreatePage';
 import ProductDetail from './pages/ProductDetail';
+import ProductEditPage from './pages/ProductEditPage';
 import SearchPage from './pages/SearchPage';
+import UserListPage from './pages/UserListPage';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/register' component={RegisterPage} />
+          <Route exact path='/admin/userlist' component={UserListPage} />
           <Route exact path='/shop' component={ProductsPage} />
           <Route
             exact
@@ -39,6 +42,11 @@ function App() {
             exact
             path='/admin/product/create'
             component={ProductCreatePage}
+          />
+          <Route
+            exact
+            path='/admin/product/:id/edit'
+            component={ProductEditPage}
           />
           <Route
             exact
