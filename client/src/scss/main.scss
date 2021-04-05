@@ -3,11 +3,12 @@
 @import 'config/mixins';
 @import 'config/general';
 
-@import 'modules/navbar';
+@import 'modules/navigation';
 @import 'modules/pagination';
 @import 'modules/container';
 @import 'modules/home';
 @import 'modules/form';
 @import 'modules/productLanding';
-@import 'modules/adminList';
+@import 'modules/admin';
 @import 'modules/productDetail';
+@import 'modules/cart';
