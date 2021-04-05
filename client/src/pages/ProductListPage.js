@@ -42,13 +42,13 @@ const ProductListPage = ({ history, match }) => {
   return (
     <div className='container'>
       <Meta title='Products List | ADMIN PAGE' />
-      <h3 className='admin__list__title'>PRODUCTS</h3>
+      <h3 className='admin__product__title'>PRODUCTS</h3>
 
       <Link to='/admin/product/create' className='btn'>
         <i className='fas fa-plus'></i> CREATE PRODUCT
       </Link>
 
-      <div className='admin__list'>
+      <div className='admin__product'>
         {loadingDelete && <Loader />}
         {errorDelete && <Message className='error'>{errorDelete}</Message>}
 
@@ -59,7 +59,7 @@ const ProductListPage = ({ history, match }) => {
             <Message>{error}</Message>
           </div>
         ) : (
-          <table className='admin__list__table'>
+          <table className='admin__product__table'>
             <thead>
               <tr>
                 <th>NO.</th>
@@ -79,9 +79,9 @@ const ProductListPage = ({ history, match }) => {
                     <td>{product.category}</td>
                     <td>{product.brand}</td>
 
-                    <td className='admin__list__btn'>
+                    <td className='admin__product__btn'>
                       <Link to={`/admin/product/${product._id}/edit`}>
-                        <button className='btn admin__list__edit'>
+                        <button className='btn admin__product__edit'>
                           <i className='fas fa-edit'></i>
                         </button>
                       </Link>

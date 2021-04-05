@@ -1,12 +1,12 @@
-.admin__list__title {
-  margin: 1rem 0;
-}
-
-.admin__list {
+.admin__product {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 3rem;
+
+  &__title {
+    margin: 1rem 0;
+  }
 
   &__table {
     margin-top: 2rem;
