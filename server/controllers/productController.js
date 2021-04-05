@@ -9,22 +9,21 @@ const getProductList = asyncHandler(async (req, res) => {
   const keywordFilter = req.query.keyword
     ? {
         name: {
-
           $regex: req.query.keyword,
-          $options: 'i',
-        },
+          $options: 'i'
+        }
       }
     : {};
 
   const categoryFilter = req.query.category
     ? {
-        category: req.query.category,
+        category: req.query.category
       }
     : {};
 
   const count = await Product.countDocuments({
     ...keywordFilter,
-    ...categoryFilter,
+    ...categoryFilter
   });
   const products = await Product.find({ ...keywordFilter, ...categoryFilter })
     .limit(pageSize)
@@ -67,7 +66,7 @@ const createProduct = asyncHandler(async (req, res) => {
     image,
     brand,
     category,
-    countInStock,
+    countInStock
   } = req.body;
 
   const product = new Product({
@@ -79,7 +78,7 @@ const createProduct = asyncHandler(async (req, res) => {
     category,
     countInStock,
     numReviews: 0,
-    description,
+    description
   });
 
   const createdProduct = await product.save();
@@ -95,7 +94,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     image,
     brand,
     category,
-    countInStock,
+    countInStock
   } = req.body;
 
   const product = await Product.findById(req.params.id);
@@ -162,5 +161,5 @@ export {
   deleteProduct,
   createProduct,
   updateProduct,
-  createProductReview,
+  createProductReview
 };
