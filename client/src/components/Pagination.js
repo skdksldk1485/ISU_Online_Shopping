@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const Paginate = ({ pages, page, isAdmin = false, keyword = '', category }) => {
+const Pagination = ({ pages, page, isAdmin = false, keyword = '', category }) => {
   const redirectTo = pageNum => {
     if (isAdmin) {
       return `/admin/productlist/${pageNum}`;
@@ -36,4 +36,4 @@ const Paginate = ({ pages, page, isAdmin = false, keyword = '', category }) => {
   );
 };
 
-export default Paginate;
+export default Pagination;

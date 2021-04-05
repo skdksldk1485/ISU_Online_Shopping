@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import Paginate from '../components/Paginate';
+import Pagination from '../components/Pagination';
 import { listProducts, deleteProduct } from '../actions/productActions';
 import Meta from '../components/Meta';
 
@@ -99,7 +99,7 @@ const ProductListPage = ({ history, match }) => {
         )}
       </div>
       <div>
-        <Paginate pages={pages} page={page} isAdmin={true} />
+        <Pagination pages={pages} page={page} isAdmin={true} />
       </div>
     </div>
   );

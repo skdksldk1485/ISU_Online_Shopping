@@ -4,7 +4,7 @@ import Product from '../components/Product';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
-import Paginate from '../components/Paginate';
+import Pagination from '../components/Pagination';
 import { listProducts } from '../actions/productActions';
 import { NavLink } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const ProductsPage = ({ match }) => {
 
   const productList = useSelector(state => state.productList);
   const { loading, error, products, page, pages } = productList;
-  
+
   useEffect(() => {
     dispatch(listProducts(keyword, category, pageNumber));
   }, [dispatch, keyword, category, pageNumber]);
@@ -75,7 +75,7 @@ const ProductsPage = ({ match }) => {
             ))}
           </div>
         )}
-        <Paginate
+        <Pagination
           pages={pages}
           page={page}
           keyword={keyword ? keyword : ''}
