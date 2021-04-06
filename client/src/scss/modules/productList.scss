@@ -1,4 +1,4 @@
-.productLanding__filter {
+.product__list {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
@@ -23,7 +23,7 @@
   }
 }
 
-.productLanding__title {
+.productList__title {
   font-size: 1rem;
   margin: 2rem 0;
 
@@ -38,15 +38,16 @@
 }
 
 .rating span {
-  margin: 0.1rem;
+  /*margin: 0.1rem;*/
 }
 
 .products {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 
   .product {
     padding: 1rem;
+    text-align: left;
 
     img {
       width: 100%;

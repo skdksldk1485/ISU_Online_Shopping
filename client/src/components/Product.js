@@ -7,9 +7,8 @@ const Product = ({ product }) => {
     <Link className='product' to={`/shop/product/${product._id}`}>
       <img src={product.image} alt='product_image' />
       <div>{product.name}</div>
-      <div>{product.image}</div>
-      <Rating value={product.rating} text={`${product.numReviews} reviews`} />$
-      {product.price}
+      ${product.price}
+      <Rating value={product.rating} text={`${product.numReviews} reviews`} />
     </Link>
   );
 };

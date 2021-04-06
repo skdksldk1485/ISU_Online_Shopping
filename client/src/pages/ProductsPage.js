@@ -29,35 +29,35 @@ const ProductsPage = ({ match }) => {
       <Meta title='Shop | ISU' />
       <div className='container'>
         <div>
-          <ul className='productLanding__filter'>
-            <li className='productLanding__filter__item'>
+          <ul className='product__list'>
+            <li className='product__list__item'>
               <NavLink exact to='/shop' activeClassName='active'>
                 ALL
               </NavLink>
             </li>
-            <li className='productLanding__filter__item'>
+            <li className='product__list__item'>
               <NavLink to='/shop/category/coats' activeClassName='active'>
                 COATS & JACKETS
               </NavLink>
             </li>
-            <li className='productLanding__filter__item'>
+            <li className='product__list__item'>
               <NavLink to='/shop/category/tops' activeClassName='active'>
                 TOPS
               </NavLink>
             </li>
-            <li className='productLanding__filter__item'>
+            <li className='product__list__item'>
               <NavLink to='/shop/category/dresses' activeClassName='active'>
                 DRESSES
               </NavLink>
             </li>
-            <li className='productLanding__filter__item'>
+            <li className='product__list__item'>
               <NavLink to='/shop/category/bottoms' activeClassName='active'>
                 BOTTOMS
               </NavLink>
             </li>
           </ul>
         </div>
-        <div className='productLanding__title'>
+        <div className='productList__title'>
           LATEST PRODUCTS
           <br />
           20% OFF ALL TOPS & DRESS
