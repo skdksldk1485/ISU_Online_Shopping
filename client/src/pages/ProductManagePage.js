@@ -7,7 +7,7 @@ import Pagination from '../components/Pagination';
 import { listProducts, deleteProduct } from '../actions/productActions';
 import Meta from '../components/Meta';
 
-const ProductListPage = ({ history, match }) => {
+const ProductManagePage = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
 
   const dispatch = useDispatch();
@@ -105,4 +105,4 @@ const ProductListPage = ({ history, match }) => {
   );
 };
 
-export default ProductListPage;
+export default ProductManagePage;

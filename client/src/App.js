@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsPage from './pages/ProductsPage';
-import ProductListPage from './pages/ProductListPage';
+import ProductManagePage from './pages/ProductManagePage';
 import ProductCreatePage from './pages/ProductCreatePage';
 import ProductDetail from './pages/ProductDetail';
 import ProductEditPage from './pages/ProductEditPage';
@@ -32,12 +32,12 @@ function App() {
           <Route
             exact
             path='/admin/productlist'
-            component={ProductListPage}
+            component={ProductManagePage}
           />
           <Route
             exact
             path='/admin/productlist/:pageNumber'
-            component={ProductListPage}
+            component={ProductManagePage}
           />
           <Route
             exact
