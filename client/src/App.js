@@ -59,12 +59,12 @@ function App() {
           <Route
             exact
             path='/shop/search/:keyword'
-            component={ProductsPage}
+            component={SearchPage}
           />
           <Route
             exact
             path='/shop/search/:keyword/page/:pageNumber'
-            component={ProductsPage}
+            component={SearchPage}
           />
           <Route exact path='/cart/:id?' component={CartPage} />
         </main>

@@ -1,0 +1,25 @@
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  width: 100%;
+  /*position: fixed;*/
+  justify-content: center;
+  z-index: 2;
+
+  input {
+    font-size: 1.5rem;
+    outline: 0;
+    border-width: 0 0 2px;
+    height: 2rem;
+    width: 600px;
+    margin-right: 1rem;
+  }
+
+  &__btn {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.5rem;
+  }
+}

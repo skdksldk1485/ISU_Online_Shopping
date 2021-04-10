@@ -6,23 +6,20 @@ const SearchBox = ({ history }) => {
   const submitHandler = e => {
     e.preventDefault();
 
-    if (keyword.trim()) {
-      history.push(`/shop/search/${keyword}`);
-    } else {
-      history.push('/');
-    }
+    history.push(`/shop/search/${keyword}`);
+
   };
 
   return (
-    <div className='container nav__search'>
+    <div className='search__form'>
       <form onSubmit={submitHandler}>
         <input
           type='text'
           name='q'
-          placeholder='Search products...'
+          placeholder='상품 검색...'
           onChange={e => setKeyword(e.target.value)}
         />
-        <button className='nav__search__btn'>
+        <button className='search__form__btn'>
           <strong>SEARCH</strong>
         </button>
       </form>

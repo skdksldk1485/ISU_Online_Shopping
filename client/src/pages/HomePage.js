@@ -1,16 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Meta from '../components/Meta';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
-  const [email, setEmail] = useState('');
-
   const refSlide1 = useRef(null);
   const refSlide2 = useRef(null);
   const revealRef1 = useRef(null);
@@ -69,14 +66,6 @@ const HomePage = () => {
     });
   }, []);
 
-  const submitHandler = e => {
-    e.preventDefault();
-    if (!email === '') {
-      alert('Thank you for your subsciption!');
-    } else {
-      alert('ERR! Please enter valid email address.');
-    }
-  };
 
   return (
     <div>
