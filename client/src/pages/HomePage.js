@@ -70,8 +70,8 @@ const HomePage = () => {
   return (
     <div>
       <Meta />
-      <section className='section showcase' ref={refSlide1}>
-        <div className='section__image section__image--a'></div>
+      <section className='section' ref={refSlide1}>
+        <div className='section__image section__image--intro1'></div>
         <div className='section__content'>
           <h1 className='section__content__title'>INVITE YOU</h1>
           <h3>
@@ -82,7 +82,7 @@ const HomePage = () => {
       </section>
 
       <section className='section' ref={refSlide2}>
-        <div className='section__image section__image--b'></div>
+        <div className='section__image section__image--intro2'></div>
         <div className='section__content' ref={revealRef1}>
           <h1 className='section__content__title'>WELCOME</h1>
           <h3>
