@@ -12,6 +12,11 @@ import ProductEditPage from './pages/ProductEditPage';
 import SearchPage from './pages/SearchPage';
 import UserListPage from './pages/UserListPage';
 import CartPage from './pages/CartPage';
+import OrderPage from './pages/OrderPage';
+import OrderPayPage from './pages/OrderPayPage';
+import OrderPlacePage from './pages/OrderPlacePage';
+import OrderCheckPage from './pages/OrderCheckPage';
+import OrderListPage from './pages/OrderListPage';
 
 function App() {
   return (
@@ -67,6 +72,11 @@ function App() {
             component={SearchPage}
           />
           <Route exact path='/cart/:id?' component={CartPage} />
+          <Route exact path='/shipping' component={OrderPage} />
+          <Route exact path='/payment' component={OrderPayPage} />
+          <Route exact path='/placeorder' component={OrderPlacePage} />
+          <Route exact path='/order/:id' component={OrderCheckPage} />
+          <Route exact path='/admin/orderlist' component={OrderListPage} />
         </main>
 
       </Router>

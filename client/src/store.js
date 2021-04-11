@@ -20,6 +20,14 @@ import {
   productReviewCreateReducer
 } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducers';
+import {
+  orderCreateReducer,
+  orderDetailsReducer,
+  orderPayReducer,
+  orderDeliverReducer,
+  orderListMyReducer,
+  orderListReducer,
+} from './reducers/orderReducers';
 
 import { logger } from 'redux-logger';
 
@@ -38,7 +46,13 @@ const reducer = combineReducers({
   productCreate: productCreateReducer,
   productDetails: productDetailsReducer,
   productReviewCreate: productReviewCreateReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
+  orderDeliver: orderDeliverReducer,
+  orderListMy: orderListMyReducer,
+  orderList: orderListReducer
 });
 
 const userInfoFromStorage = localStorage.getItem('userInfo')
