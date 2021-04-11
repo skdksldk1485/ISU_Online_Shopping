@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Product from '../components/Product';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import SearchBox from '../components/SearchBox';
+import SearchForm from '../components/SearchForm';
 import Meta from '../components/Meta';
 import { listProducts } from '../actions/productActions';
 
@@ -25,7 +25,7 @@ const SearchPage = ({ match }) => {
     <>
       <Meta title='Search | ISU' />
       <div className='container'>
-      <Route render={({ history }) => <SearchBox history={history} />} />
+      <Route render={({ history }) => <SearchForm history={history} />} />
 
       {!keyword? (
         <div></div>
