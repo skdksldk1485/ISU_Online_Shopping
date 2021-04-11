@@ -4,8 +4,9 @@
   margin-bottom: 1rem;
 
   .active {
-    color: $primary-color;
+    color: #FFCC33;
   }
+
 
   button {
     background-color: transparent;
@@ -15,8 +16,26 @@
   }
 
   &__item {
-    margin-right: 1rem;
-    /*font-size: 20px;*/
+    padding: 0.5rem;
+    font-size: 20px;
+    border-bottom: 3px solid;
+  }
+  &__item2 {
+    padding: 0.5rem;
+    font-size: 20px;
+    border-bottom: 3px solid;
+    border-bottom: 3px solid #FFCC33;
+  }
+
+  &__item:hover {
+    color: #FFCC33;
+    border-bottom: 3px solid #FFCC33;
+  }
+
+  &__itemline {
+    padding: 0.5rem;
+    font-size: 20px;
+    border-bottom: 3px solid;
   }
 
   @include atMobile {
@@ -25,8 +44,16 @@
 }
 
 .productList__title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__box {
+    width: 30%;
+    box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  }
 
   @include atMobile {
     font-size: 0.8rem;

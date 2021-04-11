@@ -30,27 +30,31 @@ const ProductsPage = ({ match }) => {
       <div className='container'>
         <div>
           <ul className='product__list'>
-            <li className='product__list__item'>
+            <li className={!category ? 'product__list__item2' : 'product__list__item'}>
               <NavLink exact to='/shop' activeClassName='active'>
                 ALL
               </NavLink>
             </li>
-            <li className='product__list__item'>
+            <li className='product__list__itemline'>|</li>
+            <li className={category === 'coats' ? 'product__list__item2' : 'product__list__item'}>
               <NavLink to='/shop/category/coats' activeClassName='active'>
                 COATS & JACKETS
               </NavLink>
             </li>
-            <li className='product__list__item'>
+            <li className='product__list__itemline'>|</li>
+            <li className={category === 'tops' ? 'product__list__item2' : 'product__list__item'}>
               <NavLink to='/shop/category/tops' activeClassName='active'>
                 TOPS
               </NavLink>
             </li>
-            <li className='product__list__item'>
+            <li className='product__list__itemline'>|</li>
+            <li className={category === 'dresses' ? 'product__list__item2' : 'product__list__item'}>
               <NavLink to='/shop/category/dresses' activeClassName='active'>
                 DRESSES
               </NavLink>
             </li>
-            <li className='product__list__item'>
+            <li className='product__list__itemline'>|</li>
+            <li className={category === 'bottoms' ? 'product__list__item2' : 'product__list__item'}>
               <NavLink to='/shop/category/bottoms' activeClassName='active'>
                 BOTTOMS
               </NavLink>
@@ -58,9 +62,9 @@ const ProductsPage = ({ match }) => {
           </ul>
         </div>
         <div className='productList__title'>
-          LATEST PRODUCTS
-          <br />
-          20% OFF ALL TOPS & DRESS
+          <div className='productList__title__box'>
+          카테고리 : {!category ? 'ALL' : category}
+          </div>
         </div>
         {loading ? (
           <Loader />
