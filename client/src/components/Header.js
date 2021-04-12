@@ -4,7 +4,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { logout } from '../actions/userActions';
 import {
   faSearch,
+  faCartPlus,
+  faStore,
   faCaretDown,
+  faUser,
+  faEdit,
   faBars,
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
@@ -52,29 +56,33 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to='/shop'>SHOP</Link>
+            <Link to='/shop'>
+              <FontAwesomeIcon icon={faStore} />
+            </Link>
           </li>
           <li>
-            <Link to='/cart'>CART</Link>
+            <Link to='/cart'>
+              <FontAwesomeIcon icon={faCartPlus} />
+            </Link>
           </li>
           {userInfo ? (
             <li className='dropdown'>
               <div className='dropdown__profile'>
-                {userInfo.name}
                 <FontAwesomeIcon
-                  icon={faCaretDown}
+                  icon={faUser}
                   style={{ margin: '0 4px' }}
                 />
+                ({userInfo.name})
               </div>
               <div className='dropdown__content'>
                 <div className='dropdown__content__item'>
-                  <Link to='/profile'>Profile</Link>
+                  <Link to='/profile'>프로필</Link>
                 </div>
                 <div
                   onClick={logoutHandler}
                   className='dropdown__content__item'
                 >
-                  Logout
+                로그아웃
                 </div>
               </div>
             </li>
@@ -87,21 +95,21 @@ const Header = () => {
           {userInfo && userInfo.isAdmin && (
             <li className='dropdown'>
               <div className='dropdown__profile'>
-                ADMIN
                 <FontAwesomeIcon
-                  icon={faCaretDown}
+                  icon={faEdit}
                   style={{ margin: '0 4px' }}
                 />
+                (관리자)
               </div>
               <div className='dropdown__content'>
                 <div className='dropdown__content__item'>
-                  <Link to='/admin/userlist'>Users</Link>
+                  <Link to='/admin/userlist'>사용자</Link>
                 </div>
                 <div className='dropdown__content__item'>
-                  <Link to='/admin/productlist'>Products</Link>
+                  <Link to='/admin/productlist'>상품</Link>
                 </div>
                 <div className='dropdown__content__item'>
-                  <Link to='/admin/orderlist'>Orders</Link>
+                  <Link to='/admin/orderlist'>주문</Link>
                 </div>
               </div>
             </li>

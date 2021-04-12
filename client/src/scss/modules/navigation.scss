@@ -27,7 +27,7 @@
 
   &__logo {
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
 
   &__search {
@@ -47,28 +47,6 @@
       font-size: 1.2rem;
     }
 
-    @include atMobile {
-      input {
-        font-size: 0.8rem;
-        margin-top: 1rem;
-        width: 200px;
-      }
-
-      &__btn {
-        font-size: 0.8rem;
-      }
-    }
-
-    @include atTablets {
-      input {
-        margin-top: 2rem;
-        width: 300px;
-      }
-
-      &__btn {
-        font-size: 1rem;
-      }
-    }
   }
 
   &__items {
@@ -77,6 +55,7 @@
 
     li {
       padding: 0 1rem;
+      font-size: 1.5rem;
     }
 
     .dropdown {
@@ -98,11 +77,15 @@
         min-width: 80px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        text-align: center;
+        text-align: left;
 
         &__item {
           margin-bottom: 4px;
           cursor: pointer;
+          font-size: 1rem;
+        }
+        .Link {
+          font-size: 1rem;
         }
 
         &__logout:hover {
@@ -118,65 +101,8 @@
     }
   }
 
-  @include atTablets {
-    .nav__logo {
-      font-size: 2rem;
-    }
-    .nav__items {
-      li {
-        padding: 0 0.8rem;
-      }
-    }
-  }
-
   &--dark,
   &--dark a {
     color: white;
-  }
-}
-
-@include atMobile {
-  .nav {
-    padding: 0.75rem 2rem;
-    display: block;
-    background-color: $dark-color;
-    width: 100%;
-    color: $white-color;
-
-    a {
-      color: $white-color;
-    }
-
-    .nav__logo {
-      font-size: 1.5rem;
-      display: block;
-    }
-
-    &__toggle-btn {
-      display: block;
-    }
-
-    .nav__items {
-      margin: auto;
-      display: block;
-      text-align: center;
-      display: none;
-
-      &-open {
-        display: block;
-      }
-
-      li {
-        margin: 1rem 0;
-      }
-
-      .dropdown {
-        position: relative;
-
-        &__content {
-          position: relative;
-        }
-      }
-    }
   }
 }
