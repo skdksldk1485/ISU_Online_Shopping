@@ -6,16 +6,28 @@
 
   &__title {
     margin: 1rem 0;
+    font-size: 2.5rem;
+    margin: 2rem;
   }
 
   &__table {
     margin-top: 2rem;
-    border: 1px solid blue;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
   }
 
-  td,
+  td {
+    padding-right: 2rem;
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    font-size: 1rem;
+  }
   th {
     padding-right: 2rem;
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: gray;
   }
 
   &__edit {
@@ -29,24 +41,5 @@
     text-align: center;
     padding: 1px;
     border: 1px solid $dark-color;
-  }
-
-  @include atMobile {
-    margin: auto;
-    font-size: 0.6rem;
-
-    td,
-    th {
-      padding-right: 0;
-    }
-
-    button {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
   }
 }

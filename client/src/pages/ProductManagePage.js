@@ -6,6 +6,11 @@ import Loader from '../components/Loader';
 import Pagination from '../components/Pagination';
 import { listProducts, deleteProduct } from '../actions/productActions';
 import Meta from '../components/Meta';
+import {
+  faEdit,
+  faTimes
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProductManagePage = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1;
@@ -42,10 +47,10 @@ const ProductManagePage = ({ history, match }) => {
   return (
     <div className='container'>
       <Meta title='Products List | ADMIN PAGE' />
-      <h3 className='admin__product__title'>PRODUCTS</h3>
+      <h3 className='admin__product__title'>상품관리</h3>
 
       <Link to='/admin/product/create' className='btn'>
-        <i className='fas fa-plus'></i> CREATE PRODUCT
+        상품 추가
       </Link>
 
       <div className='admin__product'>
@@ -62,11 +67,12 @@ const ProductManagePage = ({ history, match }) => {
           <table className='admin__product__table'>
             <thead>
               <tr>
-                <th>NO.</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
+                <th>순번</th>
+                <th>이름</th>
+                <th>가격</th>
+                <th>카테고리</th>
+                <th>브랜드</th>
+                <th>수정 / 삭제</th>
               </tr>
             </thead>
             <tbody>
@@ -82,14 +88,18 @@ const ProductManagePage = ({ history, match }) => {
                     <td className='admin__product__btn'>
                       <Link to={`/admin/product/${product._id}/edit`}>
                         <button className='btn admin__product__edit'>
-                          <i className='fas fa-edit'></i>
+                          <FontAwesomeIcon
+                            icon={faEdit}
+                          />
                         </button>
                       </Link>
                       <button
                         className='btn'
                         onClick={() => deleteHandler(product._id)}
                       >
-                        <i className='fas fa-trash'></i>
+                        <FontAwesomeIcon
+                          icon={faTimes}
+                        />
                       </button>
                     </td>
                   </tr>
