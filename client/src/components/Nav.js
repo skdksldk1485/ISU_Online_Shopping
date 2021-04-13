@@ -2,17 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 import { logout } from '../actions/userActions';
-import {
-  faSearch,
-  faCartPlus,
-  faStore,
-  faCaretDown,
-  faUser,
-  faEdit,
-  faBars,
-  faTimes,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Nav = () => {
   const dispatch = useDispatch();
