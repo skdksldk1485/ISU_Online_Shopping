@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Nav from './components/Nav';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -23,6 +24,7 @@ function App() {
     <div className="wrapper">
       <Router>
         <Header />
+        <Nav />
         <main>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/login' component={LoginPage} />

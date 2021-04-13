@@ -1,4 +1,4 @@
-.product__list {
+.nav__list {
   display: block;
   justify-content: center;
   margin-bottom: 1rem;
@@ -41,41 +41,4 @@
     border-bottom: 3px solid;
   }
 
-  @include atMobile {
-    flex-direction: column;
-  }
-}
-
-.productList__title {
-  font-size: 1.5rem;
-  margin: 2rem 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  &__box {
-    /*width: 30%;*/
-    font-size: 1.5rem;
-    border-bottom: 1.5px solid;
-  }
-}
-
-.rating span {
-  /*margin: 0.1rem;*/
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-
-  .product {
-    padding: 1rem;
-    text-align: left;
-
-    img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
-  }
 }
