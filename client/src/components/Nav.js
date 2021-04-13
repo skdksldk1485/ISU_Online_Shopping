@@ -15,6 +15,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Nav = () => {
+  const dispatch = useDispatch();
+
   const location = useLocation();
 
   const userLogin = useSelector(state => state.userLogin);
