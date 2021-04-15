@@ -25,8 +25,8 @@ const Nav = () => {
             </NavLink>
           </li>
           <li className={'nav__list__item'}>
-            <NavLink to='/shop/category/coats' activeClassName='active'>
-              COATS & JACKETS
+            <NavLink to='/shop/category/outers' activeClassName='active'>
+              OUTERS
             </NavLink>
           </li>
           <li className={'nav__list__item'}>
@@ -35,13 +35,18 @@ const Nav = () => {
             </NavLink>
           </li>
           <li className={'nav__list__item'}>
+            <NavLink to='/shop/category/pants' activeClassName='active'>
+              PANTS
+            </NavLink>
+          </li>
+          <li className={'nav__list__item'}>
             <NavLink to='/shop/category/dresses' activeClassName='active'>
               DRESSES
             </NavLink>
           </li>
           <li className={'nav__list__item'}>
-            <NavLink to='/shop/category/bottoms' activeClassName='active'>
-              BOTTOMS
+            <NavLink to='/shop/category/caps' activeClassName='active'>
+              CAPS
             </NavLink>
           </li>
         </ul>

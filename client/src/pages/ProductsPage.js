@@ -31,7 +31,7 @@ const ProductsPage = ({ match }) => {
 
         <div className='productList__title'>
           <div className='productList__title__box'>
-            {!category ? 'ALL' : category}
+            {!category ? 'ALL' : category.toUpperCase()}
           </div>
         </div>
         {loading ? (
