@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import MyPage from './pages/MyPage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductManagePage from './pages/ProductManagePage';
@@ -29,6 +30,7 @@ function App() {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/login' component={LoginPage} />
           <Route exact path='/register' component={RegisterPage} />
+          <Route exact path='/profile' component={MyPage} />
           <Route exact path='/admin/userlist' component={UserListPage} />
           <Route exact path='/shop' component={ProductsPage} />
           <Route

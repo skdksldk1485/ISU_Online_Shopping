@@ -1,0 +1,38 @@
+.mypage__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+
+
+  &__table {
+    margin-top: 2rem;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+
+  td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    /*font-size: 1rem;*/
+  }
+  th {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    /*font-size: 1rem;*/
+    background-color: gray;
+  }
+
+  &__edit {
+    color: $dark-color;
+    background-color: $white-color;
+  }
+
+  button {
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    padding: 1px;
+    border: 1px solid $dark-color;
+  }
+}
