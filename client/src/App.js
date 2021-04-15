@@ -8,7 +8,6 @@ import MyPage from './pages/MyPage';
 import RegisterPage from './pages/RegisterPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductManagePage from './pages/ProductManagePage';
-import ProductCreatePage from './pages/ProductCreatePage';
 import ProductAddPage from './pages/ProductAddPage';
 import ProductDetail from './pages/ProductDetail';
 import ProductEditPage from './pages/ProductEditPage';
