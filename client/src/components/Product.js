@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
 const Product = ({ product }) => {
+
+  const price = product.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+
   return (
     <Link className='product' to={`/shop/product/${product._id}`}>
       <img src={product.image} alt='product_image' />
       <div>{product.name}</div>
-      ${product.price}
-      <Rating value={product.rating} text={`${product.numReviews} reviews`} />
+      <div>{price}</div>
     </Link>
   );
 };

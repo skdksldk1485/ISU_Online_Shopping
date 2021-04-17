@@ -2,7 +2,6 @@
   display: block;
   justify-content: center;
   margin-bottom: 1rem;
-  width: 15%;
   position: fixed;
   margin-top: 8rem;
 
@@ -41,9 +40,6 @@
     border-bottom: 3px solid;
   }
 
-  @include atMobile {
-    flex-direction: column;
-  }
 }
 
 .productList__title {
