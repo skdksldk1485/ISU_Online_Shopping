@@ -1,0 +1,84 @@
+.common__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+
+  &__title {
+    margin: 1rem 0;
+    font-size: 2.5rem;
+    margin: 2rem;
+  }
+
+  &__table {
+    margin-top: 2rem;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+
+  }
+
+  caption {
+    font-size: 1rem;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  td {
+    padding-right: 2rem;
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  th {
+    padding-right: 2rem;
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: gray;
+  }
+
+  &__edit {
+    color: $dark-color;
+    background-color: $white-color;
+  }
+
+  button {
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    padding: 1px;
+    border: 1px solid $dark-color;
+  }
+}
+
+.common__form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+
+  table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  caption {
+    font-size: 1rem;
+    text-align: left;
+    font-weight: bold;
+  }
+  th, td {
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+  }
+  input {
+    height: auto;
+  }
+  select {
+    width: 100%;
+    height: auto;
+  }
+
+}

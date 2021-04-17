@@ -60,7 +60,7 @@ const MyPage = ({ history }) => {
   return (
     <div className='container form'>
       <Meta title={`${user.name}'s My Page`} />
-      <h2>My Page</h2>
+      <h2>프로필</h2>
       {errorMessage && !success ? (
         <div className='error'>
           <Message>{errorMessage}</Message>
@@ -75,52 +75,57 @@ const MyPage = ({ history }) => {
       ) : error ? (
         <Message className='error'>{error}</Message>
       ) : (
+      <div className='common__form'>
         <form onSubmit={submitHandler}>
-          <div className='form__content'>
-            <div>Name</div>
-            <input
-              type='name'
-              placeholder='Enter name'
-              value={name}
-              onChange={e => setName(e.target.value)}
-            />
-          </div>
-          <div className='form__content'>
-            <div>Email Address</div>
-            <input
-              type='email'
-              placeholder='Enter email'
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </div>
+          <table>
+            <caption>기본정보</caption>
+            <tr>
+              <td>이름</td>
+              <td>
+                <input
+                  type="name"
+                  value={name}
+                  onChange={e => setName(e.target.value)} /><br />
+              </td>
+            </tr>
+            <tr>
+              <td>이메일</td>
+              <td>
+                <input
+                  type="text"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)} /><br />
+              </td>
+            </tr>
+            <tr>
+              <td>비밀번호</td>
+              <td>
+                <input
+                  type="password"
+                  placeholder='비밀번호 입력..'
+                  value={password}
+                  onChange={e => setPassword(e.target.value)} /><br />
+              </td>
+            </tr>
+            <tr>
+              <td>비밀번호 확인</td>
+              <td>
+                <input
+                  type="password"
+                  placeholder='비밀번호 입력..'
+                  value={confirmPassword}
+                  onChange={e => setConfirmPassword(e.target.value)} /><br />
+              </td>
+            </tr>
+          </table>
 
-          <div className='form__content'>
-            <div>Password</div>
-            <input
-              type='password'
-              placeholder='Enter password'
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </div>
-
-          <div className='form__content'>
-            <div>Confirm Password</div>
-            <input
-              type='password'
-              placeholder='Confirm password'
-              value={confirmPassword}
-              onChange={e => setConfirmPassword(e.target.value)}
-            />
-          </div>
-          <button className='btn'>UPDATE</button>
+          <button className='btn'>수정하기</button>
         </form>
+      </div>
       )}
 
-      <div className='form__table__container'>
-        <h2 className='form__title'>My Orders</h2>
-        <div className='form__table'>
+      <div >
+        <div className='common__list'>
           {loadingOrders ? (
             <div className='loading'>
               <Loader />
@@ -130,7 +135,8 @@ const MyPage = ({ history }) => {
               <Message>{error}</Message>
             </div>
           ) : (
-            <table >
+            <table className='common__list__table'>
+              <caption>주문목록</caption>
               <thead>
                 <tr>
                   <th>ID</th>
@@ -138,6 +144,7 @@ const MyPage = ({ history }) => {
                   <th>TOTAL</th>
                   <th>PAID</th>
                   <th>DELIVERED</th>
+                  <th>check</th>
                 </tr>
               </thead>
               <tbody>
