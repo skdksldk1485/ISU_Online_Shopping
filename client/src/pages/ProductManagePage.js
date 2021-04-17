@@ -46,7 +46,7 @@ const ProductManagePage = ({ history, match }) => {
 
   return (
     <div className='container'>
-      <Meta title='Products List | ADMIN PAGE' />
+      <Meta title='ISU | Products List' />
       <h3 className='admin__product__title'>상품관리</h3>
 
       <Link to='/admin/product/create' className='btn'>

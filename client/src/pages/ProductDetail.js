@@ -56,7 +56,7 @@ const ProductDetail = ({ history, match }) => {
 
   return (
     <>
-      <Meta title={product.name} />
+      <Meta title='ISU | ProductDetail' />
       <div className='container'>
         {loading ? (
           <Loader />

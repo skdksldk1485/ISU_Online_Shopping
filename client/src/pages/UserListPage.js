@@ -34,7 +34,7 @@ const UserListPage = ({ history }) => {
 
   return (
     <div className='container'>
-      <Meta title='Users List | ADMIN PAGE' />
+      <Meta title='ISU | Users List' />
       <h3 className='admin__list__title'>USERS</h3>
       <div className='admin__list'>
         {loading ? (

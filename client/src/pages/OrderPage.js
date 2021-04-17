@@ -27,7 +27,7 @@ const OrderPage = ({ history }) => {
 
   return (
     <FormContainer>
-      <Meta title='Shipping Info | MOMO' />
+      <Meta title='ISU | Shipping Info' />
       <CheckoutSteps step1 step2 />
       <h3 className='form__title'>SHIPPING</h3>
       <form onSubmit={submitHandler}>

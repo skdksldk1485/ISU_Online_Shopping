@@ -72,7 +72,7 @@ const ProductAddPage = ({ history }) => {
 
   return (
     <FormContainer>
-      <Meta title='Create Product' />
+      <Meta title='ISU | Create Product' />
       <h3>상품 추가</h3>
       {loadingCreate && <Loader />}
       {errorCreate && (

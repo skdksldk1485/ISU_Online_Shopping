@@ -31,7 +31,7 @@ const LoginPage = ({ location, history }) => {
   };
   return (
     <FormContainer>
-      <Meta title='Sign In | ISU' />
+      <Meta title='ISU | Sign In' />
       <h2>Sign In</h2>
       {error && (
         <div className='error'>

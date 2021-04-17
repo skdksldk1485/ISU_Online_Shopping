@@ -90,7 +90,7 @@ const ProductEditPage = ({ match, history }) => {
 
   return (
     <FormContainer>
-      <Meta title='Edit Product | ADMIN PAGE' />
+      <Meta title='ISU | Edit Product' />
       <h3 className='user__list__title'>EDIT PRODUCT</h3>
       {loadingUpdate && <Loader />}
       {errorUpdate && (

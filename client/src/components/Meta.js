@@ -14,8 +14,8 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'ISU | Contemporary Styled Apparel',
-  description: 'Contemporary Styled Apparel',
+  title: 'ISU | Shopping Mall',
+  description: 'Shopping Mall',
   keywords: 'clothes, clothing, fashion, online shop, fashion store, isu',
 };
 

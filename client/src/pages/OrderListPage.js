@@ -25,7 +25,7 @@ const OrderListPage = ({ history }) => {
 
   return (
     <div className='container'>
-      <Meta title='Orders List | ADMIN PAGE' />
+      <Meta title='ISU | Orders List' />
       <h3 className='admin__list__title'>ORDERS</h3>
       <div className='admin__list'>
         {loading ? (
