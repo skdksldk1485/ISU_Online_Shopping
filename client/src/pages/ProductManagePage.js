@@ -53,7 +53,7 @@ const ProductManagePage = ({ history, match }) => {
         상품 추가
       </Link>
 
-      <div className='admin__product'>
+      <div className='common__list'>
         {loadingDelete && <Loader />}
         {errorDelete && <Message className='error'>{errorDelete}</Message>}
 
@@ -64,7 +64,7 @@ const ProductManagePage = ({ history, match }) => {
             <Message>{error}</Message>
           </div>
         ) : (
-          <table className='admin__product__table'>
+          <table className='common__list__table'>
             <thead>
               <tr>
                 <th>순번</th>
@@ -85,7 +85,7 @@ const ProductManagePage = ({ history, match }) => {
                     <td>{product.category}</td>
                     <td>{product.brand}</td>
 
-                    <td className='admin__product__btn'>
+                    <td className='common__list__btn'>
                       <Link to={`/admin/product/${product._id}/edit`}>
                         <button className='btn admin__product__edit'>
                           <FontAwesomeIcon

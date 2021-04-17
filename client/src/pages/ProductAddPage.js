@@ -13,7 +13,7 @@ const ProductAddPage = ({ history }) => {
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
   const [brand, setBrand] = useState('');
-  const [category, setCategory] = useState('tops');
+  const [category, setCategory] = useState('outers');
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState('');
   const [uploading, setUploading] = useState(false);
@@ -80,7 +80,7 @@ const ProductAddPage = ({ history }) => {
           <Message>{errorCreate}</Message>
         </div>
       )}
-      <div className='product__create'>
+      <div className='common__form'>
         <form onSubmit={submitHandler}>
           <table>
             <tr>
@@ -141,8 +141,10 @@ const ProductAddPage = ({ history }) => {
               <td>종류</td>
               <td>
                   <select id="selbox" name="selbox" onChange={e => setCategory(e.target.value)}>
-                  	<option value="tops" selected>TOPS</option>
-                  	<option value="pants">PANTS</option>
+                  	<option value="outers" selected>OUTERS</option>
+                    <option value="tops">TOPS</option>
+                    <option value="pants">PANTS</option>
+                    <option value="dresses">DRESSES</option>
                   	<option value="caps">CAPS</option>
                   </select>
               </td>
