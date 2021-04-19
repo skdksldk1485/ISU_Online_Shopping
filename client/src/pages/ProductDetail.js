@@ -70,26 +70,20 @@ const ProductDetail = ({ history, match }) => {
               <div className='productDetail__box'>
                 <img src={product.image} alt={product.name} />
               </div>
-              <div className='description-box'>
-                <div className='heading'>{product.name}</div>
-                <Rating
-                  value={product.rating}
-                  text={`${product.numReviews} reviews`}
-                />
-                <div> ${product.price} </div>
+              <div className='productDeatil__description'>
+                <hr></hr>
+                <div className='name'>{product.name}</div>
                 <div className='description'>
-                  DESCRIPTION: {product.description}
+                  {product.description}
                 </div>
-                <div
-                  className={`${
-                    product.countInStock > 0 ? 'in-stock' : 'sold-out'
-                  }`}
-                >
-                  {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                <hr></hr>
+                <div className='price'>
+                  <div className='col'>가격</div>
+                  <div>{product.price} </div>
                 </div>
                 {product.countInStock > 0 && (
                   <div className='quantity'>
-                    <span>Qty</span>
+                    <div className='col'>수량</div>
                     <select
                       className='select'
                       value={qty}
@@ -107,82 +101,84 @@ const ProductDetail = ({ history, match }) => {
                 )}
                 <button
                   className={`${
-                    product.countInStock === 0 ? 'disabled' : 'btn'
+                    product.countInStock === 0 ? 'disabled' : 'productDeatil__description__btn'
                   }`}
                   onClick={addToCartHandler}
                 >
                   ADD TO CART
                 </button>
-              </div>
-            </div>
 
-            <div className='productDetail__review'>
-              <h3>REVIEWS</h3>
-              {product.reviews.length === 0 && (
-                <div className='error'>
-                  <Message>No Reviews</Message>
+                <div className='productDetail__review'>
+                  <h3>REVIEWS</h3>
+                  {product.reviews.length === 0 && (
+                    <div className='error'>
+                      <Message>No Reviews</Message>
+                    </div>
+                  )}
+                  <div>
+                    {product.reviews.map((review, index) => (
+                      <div className='productDetail__review__container' key={index}>
+                        <div className='productDetail__review__container__item'>
+                          <strong>{review.name}</strong>
+                        </div>
+                        <div className='productDetail__review__container__item'>
+                          <Rating value={review.rating} />
+                        </div>
+                        <div className='productDetail__review__container__item'>
+                          {review.createdAt.substring(0, 10)}
+                        </div>
+                        <div className='productDetail__review__container__item__content'>
+                          {review.comment}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className='productDetail__review__create'>
+                    <h3>COMMENT MY REVIEW</h3>
+                    {errorProductReview && (
+                      <div className='error'>
+                        <Message>{errorProductReview}</Message>
+                      </div>
+                    )}
+                    {userInfo ? (
+                      <form onSubmit={submitHandler}>
+                        <div className='form__content'>
+                          <div>Rating</div>
+                          <select
+                            type='select'
+                            placeholder='Enter name'
+                            value={rating}
+                            onChange={e => setRating(e.target.value)}
+                          >
+                            <option value=''>Select...</option>
+                            <option value='1'>1 - Poor</option>
+                            <option value='2'>2 - Fair</option>
+                            <option value='3'>3 - Good</option>
+                            <option value='4'>4 - Very Good</option>
+                            <option value='5'>5 - Excellent</option>
+                          </select>
+                        </div>
+
+                        <div className='form__content__comment'>
+                          <div>Comment</div>
+                          <textarea
+                            onChange={e => setComment(e.target.value)}
+                          ></textarea>
+                        </div>
+
+                        <button className='btn'>SUBMIT</button>
+                      </form>
+                    ) : (
+                      <Message>
+                        Please <Link to='/login'>Sign In</Link> to write a review
+                      </Message>
+                    )}
+                  </div>
                 </div>
-              )}
-              <div>
-                {product.reviews.map((review, index) => (
-                  <div className='productDetail__review__container' key={index}>
-                    <div className='productDetail__review__container__item'>
-                      <strong>{review.name}</strong>
-                    </div>
-                    <div className='productDetail__review__container__item'>
-                      <Rating value={review.rating} />
-                    </div>
-                    <div className='productDetail__review__container__item'>
-                      {review.createdAt.substring(0, 10)}
-                    </div>
-                    <div className='productDetail__review__container__item__content'>
-                      {review.comment}
-                    </div>
-                  </div>
-                ))}
               </div>
-              <div className='productDetail__review__create'>
-                <h3>WRITE A CUSTOMER REVIEW</h3>
-                {errorProductReview && (
-                  <div className='error'>
-                    <Message>{errorProductReview}</Message>
-                  </div>
-                )}
-                {userInfo ? (
-                  <form onSubmit={submitHandler}>
-                    <div className='form__content'>
-                      <div>Rating</div>
-                      <select
-                        type='select'
-                        placeholder='Enter name'
-                        value={rating}
-                        onChange={e => setRating(e.target.value)}
-                      >
-                        <option value=''>Select...</option>
-                        <option value='1'>1 - Poor</option>
-                        <option value='2'>2 - Fair</option>
-                        <option value='3'>3 - Good</option>
-                        <option value='4'>4 - Very Good</option>
-                        <option value='5'>5 - Excellent</option>
-                      </select>
-                    </div>
 
-                    <div className='form__content__comment'>
-                      <div>Comment</div>
-                      <textarea
-                        onChange={e => setComment(e.target.value)}
-                      ></textarea>
-                    </div>
-
-                    <button className='btn'>SUBMIT</button>
-                  </form>
-                ) : (
-                  <Message>
-                    Please <Link to='/login'>Sign In</Link> to write a review
-                  </Message>
-                )}
-              </div>
             </div>
+
           </>
         )}
       </div>
