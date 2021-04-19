@@ -71,7 +71,6 @@ const Header = () => {
                   icon={faUser}
                   style={{ margin: '0 4px' }}
                 />
-                ({userInfo.name})
               </div>
               <div className='dropdown__content'>
                 <div className='dropdown__content__item'>
@@ -87,7 +86,7 @@ const Header = () => {
             </li>
           ) : (
             <li>
-              <Link to='/login'>SIGN IN</Link>
+              <Link to='/login'>로그인</Link>
             </li>
           )}
 
