@@ -73,22 +73,14 @@ const HomePage = () => {
       <section className='section' ref={refSlide1}>
         <div className='section__image section__image--intro1'></div>
         <div className='section__content'>
-          <h1 className='section__content__title'>INVITE YOU</h1>
-          <h3>
-            Explore this week's latest collection of the season curated for you
-          </h3>
-          <Link to='/login'>LOGIN</Link>
+
         </div>
       </section>
 
       <section className='section' ref={refSlide2}>
         <div className='section__image section__image--intro2'></div>
         <div className='section__content' ref={revealRef1}>
-          <h1 className='section__content__title'>WELCOME</h1>
-          <h3>
-            Explore this week's latest collection of the season curated for you
-          </h3>
-          <Link to='/login'>LOGIN</Link>
+
         </div>
       </section>
 
