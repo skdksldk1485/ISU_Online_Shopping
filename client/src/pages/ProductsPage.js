@@ -6,7 +6,6 @@ import Loader from '../components/Loader';
 import Meta from '../components/Meta';
 import Pagination from '../components/Pagination';
 import { listProducts } from '../actions/productActions';
-import { NavLink } from 'react-router-dom';
 
 const ProductsPage = ({ match }) => {
   const category = match.params.category;

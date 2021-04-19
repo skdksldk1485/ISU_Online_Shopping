@@ -6,7 +6,6 @@ import {
   faSearch,
   faCartPlus,
   faStore,
-  faCaretDown,
   faUser,
   faEdit,
   faBars,

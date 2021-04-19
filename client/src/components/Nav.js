@@ -11,9 +11,6 @@ const Nav = () => {
   const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
 
-  const logoutHandler = () => {
-    dispatch(logout());
-  };
   return (
     <header>
       <nav className={location.pathname === '/' ? 'nav nav--dark' : 'nav'}>
