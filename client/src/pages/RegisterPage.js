@@ -40,7 +40,7 @@ const RegisterPage = ({ location, history }) => {
   return (
     <FormContainer>
       <Meta title='ISU | Sign Up' />
-      <h2>Sign Up</h2>
+      <h1 className='common__title'>ISU</h1>
       {message && (
         <div className='error'>
           <Message>{message}</Message>
@@ -52,52 +52,58 @@ const RegisterPage = ({ location, history }) => {
         </div>
       )}
       {loading && <Loader />}
-      <form onSubmit={submitHandler}>
-        <div className='form__content'>
-          <div>Name</div>
-          <input
-            type='name'
-            placeholder='Enter name'
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-        </div>
-        <div className='form__content'>
-          <div>Email Address</div>
-          <input
-            type='email'
-            placeholder='Enter email'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
+      <div className='common__form'>
+        <form onSubmit={submitHandler}>
+          <table>
+          <tr>
+            <td>이름</td>
+            <td>
+              <input
+                type="name"
+                placeholder='이름을 입력하세요'
+                value={name}
+                onChange={e => setName(e.target.value)} />
+            </td>
+          </tr>
+            <tr>
+              <td>이메일</td>
+              <td>
+                <input
+                  type="email"
+                  placeholder='이메일을 입력하세요'
+                  value={email}
+                  onChange={e => setEmail(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>비밀번호</td>
+              <td>
+                <input
+                  type='password'
+                  placeholder='비밀번호를 입력하세요'
+                  value={password}
+                  onChange={e => setPassword(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>비밀번호 확인</td>
+              <td>
+                <input
+                  type='password'
+                  placeholder='비밀번호를 확인하세요'
+                  value={confirmPassword}
+                  onChange={e => setConfirmPassword(e.target.value)} />
+              </td>
+            </tr>
+          </table>
+          <button className='btn'>회원가입</button>
+        </form>
+      </div>
 
-        <div className='form__content'>
-          <div>Password</div>
-          <input
-            type='password'
-            placeholder='Enter password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-        </div>
-
-        <div className='form__content'>
-          <div>Confirm Password</div>
-          <input
-            type='password'
-            placeholder='Confirm password'
-            value={confirmPassword}
-            onChange={e => setConfirmPassword(e.target.value)}
-          />
-        </div>
-        <button className='btn'>REGISTER</button>
-      </form>
-
-      <div className='form__content__subtitle'>
-        Have an Account?{' '}
+      <div className='common__form__join'>
+        계정이 있으십니까?{' '}
         <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
-          LOGIN
+          로그인
         </Link>
       </div>
     </FormContainer>

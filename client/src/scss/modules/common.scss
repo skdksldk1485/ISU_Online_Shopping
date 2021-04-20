@@ -7,6 +7,11 @@
 
 }
 
+.common__title {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+}
+
 .common__list {
   display: flex;
   justify-content: center;
@@ -88,6 +93,12 @@
   select {
     width: 100%;
     height: auto;
+  }
+  &__join {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
   }
 
 }

@@ -31,42 +31,43 @@ const LoginPage = ({ location, history }) => {
   };
   return (
     <FormContainer>
-      <Meta title='ISU | Sign In' />
-      <h2>Sign In</h2>
+      <Meta title='ISU | Log In' />
+      <h1 className='common__title'>ISU</h1>
       {error && (
         <div className='error'>
           <Message>{error}</Message>
         </div>
       )}
       {loading && <Loader />}
-      <form onSubmit={submitHandler}>
-        <div className='form__content'>
-          <div>Email Address</div>
-          <input
-            type='email'
-            placeholder='Enter email'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
-
-        <div className='form__content'>
-          <div>Password</div>
-          <input
-            type='password'
-            placeholder='Enter password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-        </div>
-
-        <button className='btn'>SIGN IN</button>
-      </form>
-
-      <div className='form__content__subtitle'>
-        New Customer?{' '}
+      <div className='common__form'>
+        <form onSubmit={submitHandler}>
+          <table>
+            <tr>
+              <td>EMAIL</td>
+              <td>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>PASSWORD</td>
+              <td>
+                <input
+                  type='password'
+                  value={password}
+                  onChange={e => setPassword(e.target.value)} />
+              </td>
+            </tr>
+          </table>
+          <button className='btn'>로그인</button>
+        </form>
+      </div>
+      <div className='common__form__join'>
+        계정이 없으십니까?{' '}
         <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-          REGISTER
+          회원가입
         </Link>
       </div>
     </FormContainer>
