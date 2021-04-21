@@ -20,7 +20,7 @@
 
   &__title {
     margin: 1rem 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 2rem;
   }
 
@@ -28,7 +28,11 @@
     margin-top: 2rem;
     border-top: 1px solid #444444;
     border-collapse: collapse;
+  }
 
+  &__edit {
+    color: $dark-color;
+    background-color: $white-color;
   }
 
   caption {

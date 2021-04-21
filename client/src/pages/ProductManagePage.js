@@ -47,7 +47,7 @@ const ProductManagePage = ({ history, match }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Products List' />
-      <h3 className='admin__product__title'>상품관리</h3>
+      <h3 className='common__list__title'>상품관리</h3>
 
       <Link to='/admin/product/create' className='btn'>
         상품 추가
@@ -87,7 +87,7 @@ const ProductManagePage = ({ history, match }) => {
 
                     <td className='common__list__btn'>
                       <Link to={`/admin/product/${product._id}/edit`}>
-                        <button className='btn admin__product__edit'>
+                        <button className='btn common__list__edit'>
                           <FontAwesomeIcon
                             icon={faEdit}
                           />
