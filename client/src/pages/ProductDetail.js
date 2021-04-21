@@ -12,7 +12,6 @@ import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants';
 
 const ProductDetail = ({ history, match }) => {
   const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
   const dispatch = useDispatch();
@@ -31,8 +30,7 @@ const ProductDetail = ({ history, match }) => {
 
   useEffect(() => {
     if (successProductReview) {
-      alert('Review Submitted!');
-      setRating(0);
+      alert('리뷰가 등록되었습니다!');
       setComment('');
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
@@ -47,8 +45,7 @@ const ProductDetail = ({ history, match }) => {
     e.preventDefault();
     dispatch(
       createProductReview(match.params.id, {
-        rating,
-        comment,
+        comment
       })
     );
   };
@@ -108,7 +105,7 @@ const ProductDetail = ({ history, match }) => {
                 </button>
 
                 <div className='productDetail__review'>
-                  <h3>리뷰(Review)</h3>
+                  <h3>리뷰</h3>
                   {product.reviews.length === 0 && (
                     <div className='error'>
                       <Message>게시글이 없습니다</Message>
@@ -130,7 +127,7 @@ const ProductDetail = ({ history, match }) => {
                     ))}
                   </div>
                   <div className='productDetail__review__create'>
-                    <h3>리뷰(Review)를 작성해주세요</h3>
+                    <h3>리뷰를 작성해주세요</h3>
                     {errorProductReview && (
                       <div className='error'>
                         <Message>{errorProductReview}</Message>
