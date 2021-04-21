@@ -6,6 +6,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
 import {
+  faCheck,
   faEdit,
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
@@ -70,15 +71,15 @@ const UserListPage = ({ history }) => {
                     </td>
                     <td>
                       {user.isAdmin ? (
-                        <i
-                          className='fas fa-check'
+                        <FontAwesomeIcon
+                          icon={faCheck}
                           style={{ color: 'green' }}
-                        ></i>
+                        />
                       ) : (
-                        <i
-                          className='fas fa-times'
+                        <FontAwesomeIcon
+                          icon={faTimes}
                           style={{ color: 'red' }}
-                        ></i>
+                        />
                       )}
                     </td>
 

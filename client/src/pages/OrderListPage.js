@@ -26,8 +26,8 @@ const OrderListPage = ({ history }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Orders List' />
-      <h3 className='admin__list__title'>ORDERS</h3>
-      <div className='admin__list'>
+      <h3 className='common__list__title'>주문관리</h3>
+      <div className='common__list'>
         {loading ? (
           <Loader />
         ) : error ? (
@@ -35,15 +35,16 @@ const OrderListPage = ({ history }) => {
             <Message>{error}</Message>
           </div>
         ) : (
-          <table className='admin__list__table'>
+          <table className='common__list__table'>
             <thead>
               <tr>
-                <th>NO.</th>
-                <th>USER</th>
-                <th>DATE</th>
-                <th>TOTAL</th>
-                <th>PAID</th>
-                <th>DELIVERED</th>
+                <th>순번</th>
+                <th>고객</th>
+                <th>주문날짜</th>
+                <th>결재금액</th>
+                <th>결재여부</th>
+                <th>배송여부</th>
+                <th>확인</th>
               </tr>
             </thead>
             <tbody>
@@ -53,7 +54,7 @@ const OrderListPage = ({ history }) => {
                     <td>{index + 1}</td>
                     <td>{order.user && order.user.name}</td>
                     <td>{order.createdAt.substring(0, 10)}</td>
-                    <td>$ {order.totalPrice}</td>
+                    <td>{order.totalPrice}</td>
                     <td>
                       {order.isPaid ? (
                         order.paidAt.substring(0, 10)
