@@ -77,26 +77,8 @@
 .productDetail__review {
   margin-top: 3rem;
 
-  &__container {
-    max-width: 800px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-
-    & > * {
-      flex-grow: 1;
-      flex-basis: 0;
-    }
-
-    &__item {
-      margin: 1rem 1rem 0 1rem;
-    }
-
-    &__item__content {
-      margin: 1rem 1rem 0 1rem;
-      flex-grow: 4;
-    }
-
+  &__content {
+    margin-top: 0.5rem;
   }
 }
 

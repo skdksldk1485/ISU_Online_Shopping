@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Rating from '../components/Rating';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
@@ -109,32 +108,29 @@ const ProductDetail = ({ history, match }) => {
                 </button>
 
                 <div className='productDetail__review'>
-                  <h3>REVIEWS</h3>
+                  <h3>리뷰(Review)</h3>
                   {product.reviews.length === 0 && (
                     <div className='error'>
-                      <Message>No Reviews</Message>
+                      <Message>게시글이 없습니다</Message>
                     </div>
                   )}
                   <div>
                     {product.reviews.map((review, index) => (
-                      <div className='productDetail__review__container' key={index}>
-                        <div className='productDetail__review__container__item'>
+                      <div className='productDetail__review__content'>
+                        <div>
                           <strong>{review.name}</strong>
                         </div>
-                        <div className='productDetail__review__container__item'>
-                          <Rating value={review.rating} />
-                        </div>
-                        <div className='productDetail__review__container__item'>
-                          {review.createdAt.substring(0, 10)}
-                        </div>
-                        <div className='productDetail__review__container__item__content'>
+                        <div>
                           {review.comment}
+                        </div>
+                        <div>
+                          {review.createdAt.substring(0, 10)}
                         </div>
                       </div>
                     ))}
                   </div>
                   <div className='productDetail__review__create'>
-                    <h3>COMMENT MY REVIEW</h3>
+                    <h3>리뷰(Review)를 작성해주세요</h3>
                     {errorProductReview && (
                       <div className='error'>
                         <Message>{errorProductReview}</Message>
@@ -142,23 +138,6 @@ const ProductDetail = ({ history, match }) => {
                     )}
                     {userInfo ? (
                       <form onSubmit={submitHandler}>
-                        <div className='form__content'>
-                          <div>Rating</div>
-                          <select
-                            type='select'
-                            placeholder='Enter name'
-                            value={rating}
-                            onChange={e => setRating(e.target.value)}
-                          >
-                            <option value=''>Select...</option>
-                            <option value='1'>1 - Poor</option>
-                            <option value='2'>2 - Fair</option>
-                            <option value='3'>3 - Good</option>
-                            <option value='4'>4 - Very Good</option>
-                            <option value='5'>5 - Excellent</option>
-                          </select>
-                        </div>
-
                         <div className='form__content__comment'>
                           <div>Comment</div>
                           <textarea
@@ -166,7 +145,7 @@ const ProductDetail = ({ history, match }) => {
                           ></textarea>
                         </div>
 
-                        <button className='btn'>SUBMIT</button>
+                        <button className='btn'>제출하기</button>
                       </form>
                     ) : (
                       <Message>
