@@ -32,7 +32,7 @@ const CartPage = ({ match, location, history }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Cart' />
-      <h3 className='cart__title'>SHOPPING CART ITEMS</h3>
+      <h3 className='cart__title'>장바구니</h3>
       {cartItems.length === 0 ? (
         <div className='error'>
           <Message>
@@ -40,15 +40,24 @@ const CartPage = ({ match, location, history }) => {
           </Message>
         </div>
       ) : (
-        <div>
+        <div className='cart__container'>
+          <table>
+                <thead>
+                    <tr align="center" >
+                        <th>이미지</th>
+                        <th>상품정보</th>
+                        <th>판매가</th>
+                        <th>수량</th>
+                        <th>선택</th>
+                    </tr>
+                </thead>
+                <tbody>
           {cartItems.map(item => (
-            <div key={item.product} className='cart__container'>
-              <img src={item.image} alt={item.name} />
-              <div className='cart__name'>
-                <Link to={`/shop/product/${item.product}`}>{item.name}</Link>
-              </div>
-              <div>${item.price}</div>
-              <div>
+            <tr align="center" >
+                <td><img src={item.image} alt={item.name} /></td>
+                <td><Link to={`/shop/product/${item.product}`}>{item.name}</Link></td>
+                <td>{item.price}</td>
+                <td>
                 <select
                   className='select'
                   value={item.qty}
@@ -62,17 +71,20 @@ const CartPage = ({ match, location, history }) => {
                     </option>
                   ))}
                 </select>
-              </div>
-              <div>
+                </td>
+                <td>
                 <button
                   className='btn'
                   onClick={() => removeFromCartHandler(item.product)}
                 >
                   REMOVE
                 </button>
-              </div>
-            </div>
+                </td>
+            </tr>
           ))}
+          </tbody>
+          </table>
+
           <div className='cart__content'>
             <p>
               Order quantity:{' '}

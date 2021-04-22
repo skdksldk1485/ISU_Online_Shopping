@@ -25,7 +25,7 @@ const OrderPayPage = ({ history }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Payment Info' />
-      <CheckoutSteps step1 step2 step3 />
+      <CheckoutSteps step1 step2 />
       <h3 className='form__title'>PAYMENT METHOD</h3>
       <form onSubmit={submitHandler}>
         <h3 className='form__content'>Select Method</h3>

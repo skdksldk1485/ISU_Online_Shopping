@@ -52,7 +52,7 @@ const OrderPlacePage = ({ history }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Place Order' />
-      <CheckoutSteps step1 step2 step3 step4 />
+      <CheckoutSteps step1 step2 step3 />
       <div className='order'>
         <div>
           <h3 className='order__title'>SHIPPING</h3>

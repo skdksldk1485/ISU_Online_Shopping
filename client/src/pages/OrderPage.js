@@ -9,7 +9,6 @@ const OrderPage = ({ history }) => {
   const cart = useSelector(state => state.cart);
   const { shippingAddress } = cart;
 
-  // '' for initial controll, It will show error without '' due to initially uncontrolled input
   const [address, setAddress] = useState(shippingAddress.address || '');
   const [city, setCity] = useState(shippingAddress.city || '');
   const [postalCode, setPostalCode] = useState(
@@ -28,47 +27,57 @@ const OrderPage = ({ history }) => {
   return (
     <FormContainer>
       <Meta title='ISU | Shipping Info' />
-      <CheckoutSteps step1 step2 />
-      <h3 className='form__title'>SHIPPING</h3>
-      <form onSubmit={submitHandler}>
-        <div className='form__content'>
-          <div>Address</div>
-          <input
-            type='text'
-            placeholder='Enter address'
-            value={address}
-            onChange={e => setAddress(e.target.value)}
-          />
-        </div>
-        <div className='form__content'>
-          <div>City</div>
-          <input
-            type='text'
-            placeholder='Enter city'
-            value={city}
-            onChange={e => setCity(e.target.value)}
-          />
-        </div>
-        <div className='form__content'>
-          <div>Postal Code</div>
-          <input
-            type='text'
-            placeholder='Enter postal code'
-            value={postalCode}
-            onChange={e => setPostalCode(e.target.value)}
-          />
-        </div>
-        <div className='form__content'>
-          <div>Country</div>
-          <input
-            type='text'
-            placeholder='Enter country'
-            value={country}
-            onChange={e => setCountry(e.target.value)}
-          />
-        </div>
-        <button className='btn'>CONTINUE</button>
-      </form>
+      <CheckoutSteps step1 />
+      <h3 className='common__title'>배송</h3>
+      <div className='common__form'>
+        <form onSubmit={submitHandler}>
+          <table>
+            <tr>
+              <td>주소</td>
+              <td>
+                <input
+                  type='text'
+                  placeholder='Enter address'
+                  value={address}
+                  onChange={e => setAddress(e.target.value)}/>
+              </td>
+            </tr>
+            <tr>
+              <td>도시</td>
+              <td>
+                <input
+                  type='text'
+                  placeholder='Enter city'
+                  value={city}
+                  onChange={e => setCity(e.target.value)}/>
+              </td>
+            </tr>
+            <tr>
+              <td>우편번호</td>
+              <td>
+                <input
+                  type='text'
+                  placeholder='Enter postal code'
+                  value={postalCode}
+                  onChange={e => setPostalCode(e.target.value)}/>
+              </td>
+            </tr>
+            <tr>
+              <td>국가</td>
+              <td>
+                <input
+                  type='text'
+                  placeholder='Enter country'
+                  value={country}
+                  onChange={e => setCountry(e.target.value)}/>
+              </td>
+            </tr>
+          </table>
+
+          <button className='btn'>계속하기</button>
+        </form>
+      </div>
+
     </FormContainer>
   );
 };
