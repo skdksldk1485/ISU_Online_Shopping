@@ -63,8 +63,9 @@ const CartPage = ({ match, location, history }) => {
               <tr align="center" >
                 <td>
                   <img className='cart__container__img' src={item.image} alt={item.name} /></td>
-                <td className='cart__container__content'>
-                  <Link to={`/shop/product/${item.product}`}>{item.name}</Link></td>
+                <td>
+                  <div className='cart__container__content'><Link to={`/shop/product/${item.product}`}>{item.name}</Link>
+                  </div></td>
                 <td>{item.price}원</td>
                 <td>
                 <select
@@ -116,13 +117,13 @@ const CartPage = ({ match, location, history }) => {
                 </tr>
               </tbody>
             </table>
+            <button
+              className={`${cartItems.length === 0 ? 'disabled' : 'btn'}`}
+              onClick={checkoutHandler}
+            >
+              주문하기
+            </button>
           </div>
-          <button
-            className={`${cartItems.length === 0 ? 'disabled' : 'btn'}`}
-            onClick={checkoutHandler}
-          >
-            주문하기
-          </button>
         </div>
       )}
     </div>
