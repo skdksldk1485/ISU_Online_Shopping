@@ -26,10 +26,8 @@ const OrderPayPage = ({ history }) => {
     <div className='container'>
       <Meta title='ISU | Payment Info' />
       <CheckoutSteps step1 step2 />
-      <h3 className='form__title'>PAYMENT METHOD</h3>
+      <h3 className='form__title'>결재방법 선택</h3>
       <form onSubmit={submitHandler}>
-        <h3 className='form__content'>Select Method</h3>
-
         <div className='form__checkout__content'>
           <input
             type='radio'
@@ -39,10 +37,10 @@ const OrderPayPage = ({ history }) => {
             checked
             onChange={e => setPaymentMethod(e.target.value)}
           />
-          <label htmlFor='PayPal'> PayPal or Credit Card</label>
+          <label htmlFor='PayPal'> PayPal or 신용카드</label>
         </div>
 
-        <button className='btn form__btn'>CONTINUE</button>
+        <button className='btn form__btn'>계속하기</button>
       </form>
     </div>
   );

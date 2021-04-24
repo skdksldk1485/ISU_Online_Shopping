@@ -11,7 +11,7 @@ const OrderPlacePage = ({ history }) => {
 
   const cart = useSelector(state => state.cart);
 
-  // Calculate prices
+
   const addDecimals = num => {
     return (Math.round(num * 100) / 100).toFixed(2);
   };
@@ -32,7 +32,7 @@ const OrderPlacePage = ({ history }) => {
     if (success) {
       history.push(`/order/${order._id}`);
     }
-    // eslint-disable-next-line
+
   }, [history, success]);
 
   const placeOrderHandler = () => {
@@ -55,24 +55,24 @@ const OrderPlacePage = ({ history }) => {
       <CheckoutSteps step1 step2 step3 />
       <div className='order'>
         <div>
-          <h3 className='order__title'>SHIPPING</h3>
+          <h3 className='order__title'>배송</h3>
           <p className='order__content'>
             <strong>Address: </strong>
             {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
             {cart.shippingAddress.postalCode}, {cart.shippingAddress.city}
           </p>
 
-          <h3 className='order__title'>PAYMENT METHOD</h3>
+          <h3 className='order__title'>결재방법</h3>
           <p className='order__content'>
             <strong>Method: </strong>
             {cart.paymentMethod}
           </p>
 
           <div className='order__content'>
-            <h3 className='order__title'>ORDER ITEMS</h3>
+            <h3 className='order__title'>주문 상품</h3>
             {cart.cartItems.length === 0 ? (
               <div className='error'>
-                <Message>Your cart is empty</Message>
+                <Message>장바구니가 비었습니다</Message>
               </div>
             ) : (
               <div>
@@ -85,7 +85,7 @@ const OrderPlacePage = ({ history }) => {
                       <Link to={`/product/${item.product}`}> {item.name}</Link>
                     </div>
                     <div>
-                      {item.qty} x ${item.price} = ${item.qty * item.price}
+                      {item.qty} x {item.price}원 = {item.qty * item.price}원
                     </div>
                   </div>
                 ))}
@@ -95,30 +95,30 @@ const OrderPlacePage = ({ history }) => {
         </div>
 
         <div>
-          <h3 className='order__summary__title'>ORDER SUMMARY</h3>
-          <div className='order__summary'>
-            <span>
-              <b>Items: </b>
-            </span>
-            <span>${cart.itemsPrice}</span>
-          </div>
-          <div className='order__summary'>
-            <span>
-              <b>Shipping: </b>
-            </span>
-            <span>${cart.shippingPrice}</span>
-          </div>
-          <div className='order__summary'>
-            <span>
-              <b>Tax: </b>
-            </span>
-            <span>${cart.taxPrice}</span>
-          </div>
-          <div className='order__summary'>
-            <span>
-              <b>Total: </b>
-            </span>
-            <span>${cart.totalPrice}</span>
+          <h3 className='order__summary__title'>주문 요약</h3>
+          <div className='common__list'>
+          <table>
+            <tr>
+              <td>총 상품금액</td>
+              <td>{cart.itemsPrice}원
+              </td>
+            </tr>
+            <tr>
+              <td>배송비</td>
+              <td>{cart.shippingPrice}원
+              </td>
+            </tr>
+            <tr>
+              <td>세금</td>
+              <td>{cart.taxPrice}원
+              </td>
+            </tr>
+            <tr>
+              <td>총 결재금액</td>
+              <td>{cart.totalPrice}원
+              </td>
+            </tr>
+          </table>
           </div>
           {error && (
             <div className='error'>
@@ -129,7 +129,7 @@ const OrderPlacePage = ({ history }) => {
             className={`${cart.cartItems === 0 ? 'disabled' : 'btn'}`}
             onClick={placeOrderHandler}
           >
-            PLACE ORDER
+            결재하기
           </button>
         </div>
       </div>
