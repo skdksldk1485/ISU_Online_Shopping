@@ -42,21 +42,30 @@ const CartPage = ({ match, location, history }) => {
       ) : (
         <div className='cart__container'>
           <table>
-                <thead>
-                    <tr align="center" >
-                        <th>이미지</th>
-                        <th>상품정보</th>
-                        <th>판매가</th>
-                        <th>수량</th>
-                        <th>선택</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <colgroup>
+              <col width="20%" />
+              <col width="40%" />
+              <col width="20%" />
+              <col width="10%" />
+              <col width="10%" />
+            </colgroup>
+            <thead>
+              <tr align="center" >
+                <th>이미지</th>
+                <th>상품정보</th>
+                <th>판매가</th>
+                <th>수량</th>
+                <th>선택</th>
+              </tr>
+            </thead>
+            <tbody>
           {cartItems.map(item => (
-            <tr align="center" >
-                <td><img src={item.image} alt={item.name} /></td>
-                <td><Link to={`/shop/product/${item.product}`}>{item.name}</Link></td>
-                <td>{item.price}</td>
+              <tr align="center" >
+                <td>
+                  <img className='cart__container__img' src={item.image} alt={item.name} /></td>
+                <td className='cart__container__content'>
+                  <Link to={`/shop/product/${item.product}`}>{item.name}</Link></td>
+                <td>{item.price}원</td>
                 <td>
                 <select
                   className='select'
@@ -80,28 +89,40 @@ const CartPage = ({ match, location, history }) => {
                   REMOVE
                 </button>
                 </td>
-            </tr>
+              </tr>
           ))}
           </tbody>
           </table>
 
           <div className='cart__content'>
-            <p>
-              Order quantity:{' '}
-              {cartItems.reduce((acc, item) => acc + item.qty, 0)} Items
-            </p>
-            <p>Delivery: FREE</p>
-            <p className='cart__tot'>
-              TOTAL: $
-              {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}
-            </p>
-            <button
-              className={`${cartItems.length === 0 ? 'disabled' : 'btn'}`}
-              onClick={checkoutHandler}
-            >
-              PROCEED TO CHECKOUT
-            </button>
+            <table>
+              <colgroup>
+                <col width="20%" />
+                <col width="20%" />
+                <col width="60%" />
+              </colgroup>
+              <thead>
+                <tr align="center" >
+                  <th>총 상품금액</th>
+                  <th>배송비</th>
+                  <th>총 결재금액</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr align="center" >
+                  <td>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}원</td>
+                  <td>0원</td>
+                  <td>={cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}원</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <button
+            className={`${cartItems.length === 0 ? 'disabled' : 'btn'}`}
+            onClick={checkoutHandler}
+          >
+            주문하기
+          </button>
         </div>
       )}
     </div>
