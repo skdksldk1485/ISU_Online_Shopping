@@ -35,6 +35,20 @@ const getProductList = asyncHandler(async (req, res) => {
 });
 
 /*
+  GET /api/products/current 최신 상품 조회
+*/
+const getCurrentProductList = asyncHandler(async (req, res) => {
+  const pageSize = 3;
+  const page = Number(req.query.pageNumber) || 1;
+
+  const products = await Product.find().sort('-createdAt')
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  res.json({ products });
+});
+
+/*
   GET /api/products/.id 상품 상세조회
 */
 const getProduct = asyncHandler(async (req, res) => {
@@ -164,6 +178,7 @@ const createProductReview = asyncHandler(async (req, res) => {
 
 export {
   getProductList,
+  getCurrentProductList,
   getProduct,
   deleteProduct,
   createProduct,
