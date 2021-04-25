@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Message from '../components/Message';
-import CheckoutSteps from '../components/CheckoutSteps';
+import OrderProcess from '../components/OrderProcess';
 import { createOrder } from '../actions/orderActions';
 import Meta from '../components/Meta';
 
@@ -52,7 +52,7 @@ const OrderPlacePage = ({ history }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Place Order' />
-      <CheckoutSteps step1 step2 step3 />
+      <OrderProcess step1 step2 step3 />
       <div className='order'>
         <div>
           <h3 className='order__title'>배송</h3>

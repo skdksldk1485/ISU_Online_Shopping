@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CheckoutSteps from '../components/CheckoutSteps';
+import OrderProcess from '../components/OrderProcess';
 import { savePaymentMethod } from '../actions/cartActions';
 import Meta from '../components/Meta';
 
@@ -25,7 +25,7 @@ const OrderPayPage = ({ history }) => {
   return (
     <div className='container'>
       <Meta title='ISU | Payment Info' />
-      <CheckoutSteps step1 step2 />
+      <OrderProcess step1 step2 />
       <h3 className='form__title'>결재방법 선택</h3>
       <form onSubmit={submitHandler}>
         <div className='form__checkout__content'>

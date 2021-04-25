@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
-import CheckoutSteps from '../components/CheckoutSteps';
+import OrderProcess from '../components/OrderProcess';
 import { saveShippingAddress } from '../actions/cartActions';
 import Meta from '../components/Meta';
 
@@ -27,7 +27,7 @@ const OrderPage = ({ history }) => {
   return (
     <FormContainer>
       <Meta title='ISU | Shipping Info' />
-      <CheckoutSteps step1 />
+      <OrderProcess step1 />
       <h3 className='common__title'>배송</h3>
       <div className='common__form'>
         <form onSubmit={submitHandler}>
