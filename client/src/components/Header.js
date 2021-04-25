@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { logout } from '../actions/userActions';
 import {
   faSearch,
@@ -18,8 +18,6 @@ const Header = () => {
 
   const dispatch = useDispatch();
 
-  const location = useLocation();
-
   const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -28,7 +26,7 @@ const Header = () => {
   };
   return (
     <header>
-      <nav className={location.pathname === '/' ? 'nav nav--dark' : 'nav'}>
+      <nav className='nav'>
         <div className='nav__logo'>
           <Link to='/'>ISU</Link>
         </div>
