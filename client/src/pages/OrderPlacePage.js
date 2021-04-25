@@ -33,7 +33,7 @@ const OrderPlacePage = ({ history }) => {
       history.push(`/order/${order._id}`);
     }
 
-  }, [history, success]);
+  }, [history, order, success]);
 
   const placeOrderHandler = () => {
     dispatch(
