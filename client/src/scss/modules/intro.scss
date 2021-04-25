@@ -31,12 +31,16 @@
     text-align: center;
     color: $white-color;
     z-index: 10;
-    margin-top: -5%;
     display: flex;
     flex-direction: column;
 
     &__title {
-      font-size: 2rem;
+      position: relative;
+      font-size: 3rem;
+      width: 100%;
+      margin-left: 15%;
+      margin-top: 10%;
+      align-items: left;
     }
 
     a {
@@ -49,4 +53,25 @@
 
   }
 
+}
+
+.intro__container {
+  padding-left: 15%;
+  text-align: center;
+}
+.intro_products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .product {
+    padding: 1rem;
+    text-align: left;
+    width: 350px;
+    border: none;
+
+    img {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
 }

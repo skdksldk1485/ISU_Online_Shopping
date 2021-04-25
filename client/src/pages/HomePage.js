@@ -1,16 +1,30 @@
 import React, { useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Product from '../components/Product';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 import Meta from '../components/Meta';
+import { listCurrentProducts } from '../actions/productActions';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
+
   const refSlide1 = useRef(null);
   const refSlide2 = useRef(null);
   const revealRef1 = useRef(null);
+
+  const dispatch = useDispatch();
+  const productList = useSelector(state => state.productList);
+  const { loading, error, products, page, pages } = productList;
+
+  useEffect(() => {
+    dispatch(listCurrentProducts());
+  }, [dispatch]);
+
 
   useEffect(() => {
     const sections = [refSlide1, refSlide2].map(
@@ -80,7 +94,23 @@ const HomePage = () => {
       <section className='section' ref={refSlide2}>
         <div className='section__image section__image--intro2'></div>
         <div className='section__content' ref={revealRef1}>
+        <h1 className='section__content__title'>This season's New Trand</h1>
+        <div className='intro__container'>
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <div className='error'>
+              <Message>{error}</Message>
+            </div>
+          ) : (
+            <div className='intro_products'>
+              {products.map(product => (
+                <Product key={product._id} product={product} />
+              ))}
+            </div>
+          )}
 
+        </div>
         </div>
       </section>
 
