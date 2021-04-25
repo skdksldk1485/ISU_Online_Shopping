@@ -1,7 +1,8 @@
 import asyncHandler from 'express-async-handler';
 import Product from '../models/productModel.js';
 
-
+// @description    Fetch all products
+// @route          GET /api/products
 const getProductList = asyncHandler(async (req, res) => {
   const pageSize = 9;
   const page = Number(req.query.pageNumber) || 1;
@@ -32,7 +33,8 @@ const getProductList = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
-
+// @description    Fetch single product
+// @route          GET /api/products/.id
 const getProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -44,7 +46,8 @@ const getProduct = asyncHandler(async (req, res) => {
   }
 });
 
-
+// @description    Delete a product
+// @route          DELETE /api/products/:id
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -57,7 +60,8 @@ const deleteProduct = asyncHandler(async (req, res) => {
   }
 });
 
-
+// @description    Create a product
+// @route          POST /api/products
 const createProduct = asyncHandler(async (req, res) => {
   const {
     name,
@@ -85,7 +89,8 @@ const createProduct = asyncHandler(async (req, res) => {
   res.status(201).json(createdProduct);
 });
 
-
+// @description    Update a product
+// @route          PUT /api/products/:id
 const updateProduct = asyncHandler(async (req, res) => {
   const {
     name,
@@ -116,7 +121,8 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 });
 
-
+// @description    Create new review
+// @route          POST /api/products/:id/reviews
 const createProductReview = asyncHandler(async (req, res) => {
   const { comment } = req.body;
 
