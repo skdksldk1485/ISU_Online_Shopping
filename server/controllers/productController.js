@@ -1,8 +1,9 @@
 import asyncHandler from 'express-async-handler';
 import Product from '../models/productModel.js';
 
-// @description    Fetch all products
-// @route          GET /api/products
+/*
+  GET /api/products 모든 상품 조회
+*/
 const getProductList = asyncHandler(async (req, res) => {
   const pageSize = 9;
   const page = Number(req.query.pageNumber) || 1;
@@ -33,8 +34,9 @@ const getProductList = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) });
 });
 
-// @description    Fetch single product
-// @route          GET /api/products/.id
+/*
+  GET /api/products/.id 상품 상세조회
+*/
 const getProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
@@ -42,26 +44,28 @@ const getProduct = asyncHandler(async (req, res) => {
     res.json(product);
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('선택하신 상품이 없습니다');
   }
 });
 
-// @description    Delete a product
-// @route          DELETE /api/products/:id
+/*
+  DELETE /api/products/:id 상품 삭제
+*/
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
 
   if (product) {
     await product.remove();
-    res.json({ message: 'Product removed' });
+    res.json({ message: '상품이 삭제되었습니다' });
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('해당 상품이 존재하지 않습니다');
   }
 });
 
-// @description    Create a product
-// @route          POST /api/products
+/*
+  POST /api/products 상품 추가
+*/
 const createProduct = asyncHandler(async (req, res) => {
   const {
     name,
@@ -89,8 +93,9 @@ const createProduct = asyncHandler(async (req, res) => {
   res.status(201).json(createdProduct);
 });
 
-// @description    Update a product
-// @route          PUT /api/products/:id
+/*
+  PUT /api/products/:id 상품 수정
+*/
 const updateProduct = asyncHandler(async (req, res) => {
   const {
     name,
@@ -117,12 +122,13 @@ const updateProduct = asyncHandler(async (req, res) => {
     res.json(updatedProduct);
   } else {
     res.status(404);
-    throw new Error('Product not found');
+    throw new Error('해당 상품이 존재하지 않습니다');
   }
 });
 
-// @description    Create new review
-// @route          POST /api/products/:id/reviews
+/*
+  POST /api/products/:id/reviews 리뷰 추가
+*/
 const createProductReview = asyncHandler(async (req, res) => {
   const { comment } = req.body;
 
@@ -152,7 +158,7 @@ const createProductReview = asyncHandler(async (req, res) => {
     res.status(201).json({ message: '리뷰가 추가됨' });
   } else {
     res.status(404);
-    throw new Error('상품이 존재하지 않습니다');
+    throw new Error('해당 상품이 존재하지 않습니다');
   }
 });
 

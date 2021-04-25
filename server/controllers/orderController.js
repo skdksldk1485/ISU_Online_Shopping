@@ -1,8 +1,9 @@
 import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
 
-// @description    Create new order
-// @route          POST /api/orders
+/*
+  POST /api/orders 주문 추가
+*/
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
     orderItems,
@@ -16,7 +17,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
-    throw new Error('No order items');
+    throw new Error('주문한 상품이 없습니다');
     return;
   } else {
     const order = new Order({
@@ -36,8 +37,9 @@ const addOrderItems = asyncHandler(async (req, res) => {
   }
 });
 
-// @description    Get order by ID
-// @route          GET /api/orders/:id
+/*
+  GET /api/orders/:id 주문 조회
+*/
 const getOrderById = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id).populate(
     'user',
@@ -48,19 +50,20 @@ const getOrderById = asyncHandler(async (req, res) => {
     res.json(order);
   } else {
     res.status(404);
-    throw new Error('Order not found');
+    throw new Error('주문내역을 확인할 수 없습니다');
   }
 });
 
-// @description    Update order to paid
-// @route          GET /api/orders/:id/pay
+/*
+  GET /api/orders/:id/pay 결재완료
+*/
 const updateOrderToPaid = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
-    // codes below from PayPal
+
     order.paymentResult = {
       id: req.body.id,
       status: req.body.status,
@@ -73,12 +76,13 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     res.json(updatedOrder);
   } else {
     res.status(404);
-    throw new Error('Order not found');
+    throw new Error('주문내역을 확인할 수 없습니다');
   }
 });
 
-// @description    Update order to delivered
-// @route          GET /api/orders/:id/deliver
+/*
+  GET GET /api/orders/:id/deliver 배송완료
+*/
 const updateOrderToDelivered = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
@@ -91,19 +95,21 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
     res.json(updatedOrder);
   } else {
     res.status(404);
-    throw new Error('Order not found');
+    throw new Error('주문내역을 확인할 수 없습니다');
   }
 });
 
-// @description    Get logged in user orders
-// @route          GET /api/orders/myorders
+/*
+  GET GET /api/orders/:id/deliver 사용자별 주문목록 조회
+*/
 const getMyOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({ user: req.user._id });
   res.json(orders);
 });
 
-// @description    Get all orders
-// @route          GET /api/orders
+/*
+  GET GET /api/orders 모든 주문목록 조회
+*/
 const getOrders = asyncHandler(async (req, res) => {
   const orders = await Order.find({}).populate('user', 'id name');
   res.json(orders);
