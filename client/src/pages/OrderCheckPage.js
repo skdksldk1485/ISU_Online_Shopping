@@ -94,53 +94,24 @@ const OrderCheckPage = ({ match, history }) => {
       <h3>Order {order._id}</h3>
       <div className='order'>
         <div>
-          <h3 className='order__title'>SHIPPING</h3>
-          <div className='order__content'>
-            <p>
-              <strong>Name: </strong> {order.user.name}
-            </p>
-            <p>
-              <strong>Email: </strong>
-              <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
-            </p>
-            <p>
-              <strong>Address: </strong> {order.user.name}
-              {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
-              {order.shippingAddress.postalCode}, {order.shippingAddress.city}
-            </p>
-            {order.isDelivered ? (
-              <div className='success'>
-                <Message>Delivered on {order.deliveredAt}</Message>
-              </div>
-            ) : (
-              <div className='error'>
-                <Message>Not Delivered</Message>
-              </div>
-            )}
-          </div>
+          <h3 className='order__title'>배송</h3>
+          <p className='order__content'>
+            <strong>Address: </strong>
+            {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
+            {order.shippingAddress.postalCode}, {order.shippingAddress.city}
+          </p>
 
-          <h3 className='order__title'>PAYMENT METHOD</h3>
-          <div className='order__content'>
-            <p>
-              <strong>Method: </strong>
-              {order.paymentMethod}
-            </p>
-            {order.isPaid ? (
-              <div className='success'>
-                <Message>Paid on {order.paidAt}</Message>
-              </div>
-            ) : (
-              <div className='error'>
-                <Message>Not paid</Message>
-              </div>
-            )}
-          </div>
+          <h3 className='order__title'>결재방법</h3>
+          <p className='order__content'>
+            <strong>Method: </strong>
+            {order.paymentMethod}
+          </p>
 
           <div className='order__content'>
-            <h3 className='order__title'>ORDER ITEMS</h3>
+            <h3 className='order__title'>주문 상품</h3>
             {order.orderItems.length === 0 ? (
               <div className='error'>
-                <Message>Order is empty</Message>
+                <Message>장바구니가 비었습니다</Message>
               </div>
             ) : (
               <div>
@@ -153,7 +124,7 @@ const OrderCheckPage = ({ match, history }) => {
                       <Link to={`/product/${item.product}`}> {item.name}</Link>
                     </div>
                     <div>
-                      {item.qty} x ${item.price} = ${item.qty * item.price}
+                      {item.qty} x {item.price}원 = {item.qty * item.price}원
                     </div>
                   </div>
                 ))}
@@ -163,59 +134,36 @@ const OrderCheckPage = ({ match, history }) => {
         </div>
 
         <div>
-          <h3 className='order__summary__title'>ORDER SUMMARY</h3>
-          <div className='order__summary'>
-            <span>
-              <b>Items: </b>
-            </span>
-            <span>${order.itemsPrice}</span>
+          <h3 className='order__summary__title'>주문 요약</h3>
+          <div className='common__list'>
+          <table>
+            <tr>
+              <td>총 상품금액</td>
+              <td>{order.itemsPrice}원
+              </td>
+            </tr>
+            <tr>
+              <td>배송비</td>
+              <td>{order.shippingPrice}원
+              </td>
+            </tr>
+            <tr>
+              <td>세금</td>
+              <td>{order.taxPrice}원
+              </td>
+            </tr>
+            <tr>
+              <td>총 결재금액</td>
+              <td>{order.totalPrice}원
+              </td>
+            </tr>
+          </table>
           </div>
-          <div className='order__summary'>
-            <span>
-              <b>Shipping: </b>
-            </span>
-            <span>${order.shippingPrice}</span>
-          </div>
-          <div className='order__summary'>
-            <span>
-              <b>Tax: </b>
-            </span>
-            <span>${order.taxPrice}</span>
-          </div>
-          <div className='order__summary'>
-            <span>
-              <b>Total: </b>
-            </span>
-            <span>${order.totalPrice}</span>
-          </div>
-          <div className='order__paypal__btn'>
-            {!order.isPaid && (
-              <div>
-                {loadingPay && <Loader />}
-                <div>
-                  {!sdkReady ? (
-                    <Loader />
-                  ) : (
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      onSuccess={successPaymentHandler}
-                    />
-                  )}
-                </div>
-              </div>
-            )}
-            <div>
-              {loadingDeliver && <Loader />}
-              {userInfo &&
-                userInfo.isAdmin &&
-                order.isPaid &&
-                !order.isDelivered && (
-                  <button className='btn' onClick={deliverHandler}>
-                    MARK AS DELIVERED
-                  </button>
-                )}
+          {error && (
+            <div className='error'>
+              <Message>(error)</Message>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
