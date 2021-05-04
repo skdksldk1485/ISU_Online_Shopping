@@ -1,15 +1,12 @@
 // 순서를 고려하면, variables를 1번째로 import 해야한다
 @import 'config/variable';
-
-@import 'config/general';
-
+@import 'config/global';
 @import 'modules/nav';
 @import 'modules/pagination';
 @import 'modules/mypage';
 @import 'modules/intro';
 @import 'modules/form';
 @import 'modules/productList';
-@import 'modules/admin';
 @import 'modules/common';
 @import 'modules/productDetail';
 @import 'modules/product';

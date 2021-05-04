@@ -7,7 +7,7 @@
     height: 30px;
     padding: 10px;
     outline: none;
-    border: 1px solid $primary-color;
+    border: 1px solid $primary;
   }
 
   &__title {
@@ -43,7 +43,7 @@
     }
 
     &__disabled {
-      color: $primary-color;
+      color: $primary;
     }
   }
 

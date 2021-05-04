@@ -14,7 +14,7 @@
   &__title {
     text-align: start;
     margin: 2rem 0;
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid $primary;
   }
 
   &__content {
@@ -30,7 +30,7 @@
   &__content__container {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid $primary;
 
     img {
       max-width: 100px;
@@ -56,7 +56,7 @@
 
     &__title {
       margin: 2rem 0;
-      color: $emphasis-color;
+      color: $emphasis;
     }
   }
 }

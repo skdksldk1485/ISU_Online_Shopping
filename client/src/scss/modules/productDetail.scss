@@ -27,11 +27,11 @@
     }
 
     .in-stock {
-      color: $success-color;
+      color: $success;
     }
 
     .sold-out {
-      color: $danger-color;
+      color: $danger;
     }
 
     .price {
@@ -54,8 +54,8 @@
       display: inline-block;
       font-size: 0.8rem;
       padding: 12px;
-      color: $dark-color;
-      background-color: $white-color;
+      color: $dark;
+      background-color: $white;
       border: 1px solid #999999;
       text-align: center;
       vertical-align: middle;

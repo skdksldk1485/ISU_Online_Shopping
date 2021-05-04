@@ -24,8 +24,8 @@
   }
 
   &__edit {
-    color: $dark-color;
-    background-color: $white-color;
+    color: $dark;
+    background-color: $white;
   }
 
   button {
@@ -33,6 +33,6 @@
     height: 36px;
     text-align: center;
     padding: 1px;
-    border: 1px solid $dark-color;
+    border: 1px solid $dark;
   }
 }
