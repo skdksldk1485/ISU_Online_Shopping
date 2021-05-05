@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import MyPage from './pages/MyPage';
@@ -82,7 +83,10 @@ function App() {
           <Route exact path='/order/:id' component={OrderCheckPage} />
           <Route exact path='/admin/orderlist' component={OrderListPage} />
         </main>
-
+        <Route
+          path='/'
+          render={({ location }) => location.pathname !== '/' && <Footer />}
+        />
       </Router>
     </div>
   );
