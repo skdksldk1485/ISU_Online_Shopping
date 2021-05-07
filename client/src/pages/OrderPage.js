@@ -28,7 +28,7 @@ const OrderPage = ({ history }) => {
     <FormContainer>
       <Meta title='ISU | Shipping Info' />
       <OrderProcess step1 />
-      <h3 className='common__title'>배송</h3>
+      <div className='common__title'>배송</div>
       <div className='common__form'>
         <form onSubmit={submitHandler}>
           <table>

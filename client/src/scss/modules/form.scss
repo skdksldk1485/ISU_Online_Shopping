@@ -11,7 +11,7 @@
   }
 
   &__title {
-    margin-top: 3.8rem;
+    /*margin-top: 3.8rem;*/
   }
 
   &__content {
@@ -37,7 +37,8 @@
 
   &__order__nav {
     font-weight: 800;
-    margin: 16px 300px;
+    margin-bottom: 2rem;
+    margin: 2rem;
     span {
       margin-right: 2rem;
     }
