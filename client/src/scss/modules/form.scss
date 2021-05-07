@@ -12,6 +12,8 @@
 
   &__title {
     /*margin-top: 3.8rem;*/
+    font-family: '맑은 고딕', serif;
+    font-size: 2rem;
   }
 
   &__content {
@@ -32,6 +34,13 @@
         width: 400px;
         height: 80px;
       }
+    }
+  }
+
+  &__checkout {
+    &__content {
+      margin-top:50px;
+      margin-bottom:50px;
     }
   }
 

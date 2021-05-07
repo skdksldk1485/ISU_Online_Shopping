@@ -26,7 +26,7 @@ const OrderPayPage = ({ history }) => {
     <div className='container'>
       <Meta title='ISU | Payment Info' />
       <OrderProcess step1 step2 />
-      <h3 className='form__title'>결재방법 선택</h3>
+      <div className='form__title'>결재방법 선택</div>
       <form onSubmit={submitHandler}>
         <div className='form__checkout__content'>
           <input
