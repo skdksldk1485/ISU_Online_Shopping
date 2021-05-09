@@ -28,6 +28,7 @@ const ProductDetail = ({ history, match }) => {
     error: errorProductReview,
   } = productReviewCreate;
 
+
   useEffect(() => {
     if (successProductReview) {
       alert('리뷰가 등록되었습니다!');
@@ -75,7 +76,7 @@ const ProductDetail = ({ history, match }) => {
                 <hr></hr>
                 <div className='price'>
                   <div className='col'>가격</div>
-                  <div>{product.price} </div>
+                  <div>{product.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}원</div>
                 </div>
                 {product.countInStock > 0 && (
                   <div className='quantity'>
