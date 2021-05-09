@@ -81,7 +81,7 @@ const ProductManagePage = ({ history, match }) => {
                   <tr key={product._id}>
                     <td>{index + 1}</td>
                     <td>{product.name}</td>
-                    <td>${product.price}</td>
+                    <td>{product.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}원</td>
                     <td>{product.category}</td>
                     <td>{product.brand}</td>
 
