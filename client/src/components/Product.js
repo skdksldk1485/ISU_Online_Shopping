@@ -9,7 +9,7 @@ const Product = ({ product }) => {
     <Link className='product' to={`/shop/product/${product._id}`}>
       <img src={product.image} alt='product_image' />
       <div>{product.name}</div>
-      <div>{price}원</div>
+      <div>${price}</div>
     </Link>
   );
 };

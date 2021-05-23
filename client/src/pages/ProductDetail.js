@@ -28,6 +28,7 @@ const ProductDetail = ({ history, match }) => {
     error: errorProductReview,
   } = productReviewCreate;
 
+  const price = String(product.price).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
   useEffect(() => {
     if (successProductReview) {
@@ -76,7 +77,7 @@ const ProductDetail = ({ history, match }) => {
                 <hr></hr>
                 <div className='price'>
                   <div className='col'>가격</div>
-                  <div>{product.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}원</div>
+                  <div>${price}</div>
                 </div>
                 {product.countInStock > 0 && (
                   <div className='quantity'>

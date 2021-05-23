@@ -66,7 +66,7 @@ const CartPage = ({ match, location, history }) => {
                 <td>
                   <div className='cart__container__content'><Link to={`/shop/product/${item.product}`}>{item.name}</Link>
                   </div></td>
-                <td>{item.price}원</td>
+                <td>${item.price}</td>
                 <td>
                 <select
                   className='select'
@@ -111,9 +111,9 @@ const CartPage = ({ match, location, history }) => {
               </thead>
               <tbody>
                 <tr align="center" >
-                  <td>{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}원</td>
-                  <td>0원</td>
-                  <td>={cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}원</td>
+                  <td>${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}</td>
+                  <td>$0</td>
+                  <td>=${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0)}</td>
                 </tr>
               </tbody>
             </table>

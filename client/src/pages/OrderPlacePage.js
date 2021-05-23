@@ -57,14 +57,14 @@ const OrderPlacePage = ({ history }) => {
         <div>
           <h3 className='order__title'>배송</h3>
           <p className='order__content'>
-            <strong>Address: </strong>
+            <strong>주소: </strong>
             {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
             {cart.shippingAddress.postalCode}, {cart.shippingAddress.city}
           </p>
 
           <h3 className='order__title'>결재방법</h3>
           <p className='order__content'>
-            <strong>Method: </strong>
+            <strong>결재방법: </strong>
             {cart.paymentMethod}
           </p>
 
@@ -85,7 +85,7 @@ const OrderPlacePage = ({ history }) => {
                       <Link to={`/product/${item.product}`}> {item.name}</Link>
                     </div>
                     <div>
-                      {item.qty} x {item.price}원 = {item.qty * item.price}원
+                      {item.qty} x ${item.price} = ${item.qty * item.price}
                     </div>
                   </div>
                 ))}
@@ -100,22 +100,22 @@ const OrderPlacePage = ({ history }) => {
           <table>
             <tr>
               <td>총 상품금액</td>
-              <td>{cart.itemsPrice}원
+              <td>${cart.itemsPrice}
               </td>
             </tr>
             <tr>
               <td>배송비</td>
-              <td>{cart.shippingPrice}원
+              <td>${cart.shippingPrice}
               </td>
             </tr>
             <tr>
               <td>세금</td>
-              <td>{cart.taxPrice}원
+              <td>${cart.taxPrice}
               </td>
             </tr>
             <tr>
               <td>총 결재금액</td>
-              <td>{cart.totalPrice}원
+              <td>${cart.totalPrice}
               </td>
             </tr>
           </table>
