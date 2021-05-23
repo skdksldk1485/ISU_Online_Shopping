@@ -50,7 +50,7 @@ const OrderCheckPage = ({ match, history }) => {
       const { data: clientId } = await axios.get('/api/congig/paypal');
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=ATHoaUPgCKoNOD4pExA8Nx_lszXC5VN2QPGdswTRv5i_v0VPFVIs8jCGdVmcZuMwWNHeV10Z1RMDXhRl`;
       script.async = true;
       script.onload = () => {
         setSdkReady(true);
@@ -90,28 +90,57 @@ const OrderCheckPage = ({ match, history }) => {
     </div>
   ) : (
     <div className='container'>
-      <Meta title='ISU | Order Summary' />
-      <h3>Order {order._id}</h3>
+      <Meta title={`Payment Order | ${order._id}`} />
+      <h3>주문번호 {order._id}</h3>
       <div className='order'>
         <div>
           <h3 className='order__title'>배송</h3>
-          <p className='order__content'>
-            <strong>Address: </strong>
-            {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
-            {order.shippingAddress.postalCode}, {order.shippingAddress.city}
-          </p>
+          <div className='order__content'>
+            <p>
+              <strong>이름: </strong> {order.user.name}
+            </p>
+            <p>
+              <strong>이메일: </strong>
+              <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+            </p>
+            <p>
+              <strong>주소: </strong> {order.user.name}
+              {order.shippingAddress.address}, {order.shippingAddress.city},{' '}
+              {order.shippingAddress.postalCode}, {order.shippingAddress.city}
+            </p>
+            {order.isDelivered ? (
+              <div className='success'>
+                <Message>배송완료 {order.deliveredAt}</Message>
+              </div>
+            ) : (
+              <div className='error'>
+                <Message>배송미완료</Message>
+              </div>
+            )}
+          </div>
 
           <h3 className='order__title'>결재방법</h3>
-          <p className='order__content'>
-            <strong>Method: </strong>
-            {order.paymentMethod}
-          </p>
+          <div className='order__content'>
+            <p>
+              <strong>결재방법: </strong>
+              {order.paymentMethod}
+            </p>
+            {order.isPaid ? (
+              <div className='success'>
+                <Message>입금완료 {order.paidAt}</Message>
+              </div>
+            ) : (
+              <div className='error'>
+                <Message>미입금</Message>
+              </div>
+            )}
+          </div>
 
           <div className='order__content'>
             <h3 className='order__title'>주문 상품</h3>
             {order.orderItems.length === 0 ? (
               <div className='error'>
-                <Message>장바구니가 비었습니다</Message>
+                <Message>주문된 상품이 없습니다.</Message>
               </div>
             ) : (
               <div>
@@ -124,7 +153,7 @@ const OrderCheckPage = ({ match, history }) => {
                       <Link to={`/product/${item.product}`}> {item.name}</Link>
                     </div>
                     <div>
-                      {item.qty} x {item.price}원 = {item.qty * item.price}원
+                      {item.qty} x ${item.price} = ${item.qty * item.price}
                     </div>
                   </div>
                 ))}
@@ -139,31 +168,54 @@ const OrderCheckPage = ({ match, history }) => {
           <table>
             <tr>
               <td>총 상품금액</td>
-              <td>{order.itemsPrice}원
+              <td><span>${order.itemsPrice}</span>
               </td>
             </tr>
             <tr>
               <td>배송비</td>
-              <td>{order.shippingPrice}원
+              <td><span>${order.shippingPrice}</span>
               </td>
             </tr>
             <tr>
               <td>세금</td>
-              <td>{order.taxPrice}원
+              <td><span>${order.taxPrice}</span>
               </td>
             </tr>
             <tr>
               <td>총 결재금액</td>
-              <td>{order.totalPrice}원
+              <td><span>${order.totalPrice}</span>
               </td>
             </tr>
           </table>
           </div>
-          {error && (
-            <div className='error'>
-              <Message>(error)</Message>
+          <div className='order__paypal__btn'>
+            {!order.isPaid && (
+              <div>
+                {loadingPay && <Loader />}
+                <div>
+                  {!sdkReady ? (
+                    <Loader />
+                  ) : (
+                    <PayPalButton
+                      amount={order.totalPrice}
+                      onSuccess={successPaymentHandler}
+                    />
+                  )}
+                </div>
+              </div>
+            )}
+            <div>
+              {loadingDeliver && <Loader />}
+              {userInfo &&
+                userInfo.isAdmin &&
+                order.isPaid &&
+                !order.isDelivered && (
+                  <button className='btn' onClick={deliverHandler}>
+                    배송 확인
+                  </button>
+                )}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

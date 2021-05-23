@@ -27,6 +27,7 @@
     "nodemon": "^2.0.7",
     "path": "^0.12.7",
     "pug": "2.0.0-beta11",
+    "react-paypal-express-checkout": "^1.0.5",
     "require": "^2.4.20"
   }
 }
