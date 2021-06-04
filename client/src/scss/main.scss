@@ -1,5 +1,7 @@
 // 순서를 고려하면, variables를 1번째로 import 해야한다
 @import 'config/variable';
+@import 'config/mixins';
+
 @import 'config/global';
 @import 'modules/nav';
 @import 'modules/footer';
