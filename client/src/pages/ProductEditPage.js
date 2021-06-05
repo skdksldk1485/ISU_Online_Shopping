@@ -91,7 +91,7 @@ const ProductEditPage = ({ match, history }) => {
   return (
     <FormContainer>
       <Meta title='ISU | Edit Product' />
-      <h3 className='user__list__title'>상품 수정</h3>
+      <h3 className='common__title'>상품 수정</h3>
       {loadingUpdate && <Loader />}
       {errorUpdate && (
         <div className='error'>

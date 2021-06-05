@@ -9,6 +9,45 @@
   flex-wrap: wrap;
   margin-bottom: 3rem;
 
+  @include atMobile {
+    /* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+      background: #ccc;
+    }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			/*border-bottom: 1px solid #eee;*/
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+  }
+
   &__title {
     margin: 1rem 0;
     font-size: 2rem;
@@ -19,6 +58,7 @@
     margin-top: 2rem;
     border-top: 1px solid #444444;
     border-collapse: collapse;
+
   }
 
   &__edit {
@@ -62,9 +102,14 @@
 
 .common__form {
   display: flex;
-  width: 100%;
   justify-content: center;
   text-align: center;
+
+  @include atMobile {
+    display: block;
+    width: 100%;
+    font-size: 0.8rem;
+  }
 
   table {
     width: 100%;
@@ -72,6 +117,7 @@
     border-collapse: collapse;
     margin-top: 1rem;
     margin-bottom: 1rem;
+
   }
   caption {
     font-size: 1rem;
@@ -84,6 +130,11 @@
   }
   input {
     height: auto;
+
+    @include atMobile {
+      display: block;
+      width: 100%;
+    }
   }
   select {
     width: 100%;

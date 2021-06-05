@@ -2,8 +2,16 @@
   display: flex;
   padding: 1rem;
 
+  @include atMobile {
+    display: block;
+  }
+
   button {
     width: 500px;
+
+    @include atMobile {
+      width: 100%;
+    }
   }
 
   & > * {
@@ -25,12 +33,20 @@
   &__paypal__btn {
     max-width: 500px;
     margin: auto;
+
+    @include atMobile {
+      width: 100%;
+    }
   }
 
   &__content__container {
     display: flex;
     align-items: center;
     border-bottom: 1px solid $primary;
+
+    @include atMobile {
+      display: block;
+    }
 
     img {
       max-width: 100px;
