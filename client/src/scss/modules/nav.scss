@@ -71,7 +71,7 @@
 
     .dropdown {
       position: relative;
-      display: inline-block;
+      /*display: inline-block;*/
 
       .dropdown__profile {
         text-align: center;
@@ -94,6 +94,10 @@
           margin-bottom: 4px;
           cursor: pointer;
           font-size: 1rem;
+
+          @include atMobile {
+            text-align: center;
+          }
         }
         .Link {
           font-size: 1rem;
