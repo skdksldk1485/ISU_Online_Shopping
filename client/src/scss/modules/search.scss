@@ -14,6 +14,16 @@
     height: 2rem;
     width: 600px;
     margin-right: 1rem;
+
+    @include atTablets {
+      padding: 0;
+      width: 45%;
+    }
+    @include atMobile {
+      font-size: 1rem;
+      padding: 0;
+      width: 45%;
+    }
   }
 
   &__btn {
@@ -21,5 +31,11 @@
     cursor: pointer;
     background-color: transparent;
     font-size: 1.5rem;
+
+    @include atTablets {
+    }
+    @include atMobile {
+      font-size: 1rem;
+    }
   }
 }

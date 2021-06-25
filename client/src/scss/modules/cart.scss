@@ -7,12 +7,16 @@
   align-items: center;
   margin-top: 10px;
 
+  @include atTablets {
+  }
   @include atMobile {
     display: block;
-    overflow-x:auto;
+    overflow-x: auto;
   }
 
-  table, th, td {
+  table,
+  th,
+  td {
     border: 1px solid $primary;
   }
   table {
@@ -26,7 +30,7 @@
     margin-top: 10px;
   }
   &__content {
-    text-align : left;
+    text-align: left;
     margin-left: 10px;
   }
 
@@ -51,7 +55,6 @@
   .btn {
     font-size: 0.6rem;
   }
-
 }
 
 .cart__content {
@@ -75,7 +78,6 @@
     width: 100%;
     border-collapse: collapse;
     justify-content: center;
-
   }
   tr {
     height: 50px;

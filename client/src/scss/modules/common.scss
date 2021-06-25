@@ -1,5 +1,5 @@
 .common__title {
-  font-family: '맑은 고딕', serif;
+  font-family: "맑은 고딕", serif;
   font-size: 2rem;
 }
 
@@ -9,43 +9,51 @@
   flex-wrap: wrap;
   margin-bottom: 3rem;
 
+  @include atTablets {
+    font-size: 0.1rem;
+  }
+
   @include atMobile {
     /* Force table to not be like tables anymore */
-		table, thead, tbody, th, td, tr {
-			display: block;
-		}
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
 
-		/* Hide table headers (but not display: none;, for accessibility) */
-		thead tr {
-			position: absolute;
-			top: -9999px;
-			left: -9999px;
-		}
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
 
     tr {
       margin: 0 0 1rem 0;
       background: #ccc;
     }
 
-		td {
-			/* Behave  like a "row" */
-			border: none;
-			/*border-bottom: 1px solid #eee;*/
-			position: relative;
-			padding-left: 50%;
-		}
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      /*border-bottom: 1px solid #eee;*/
+      position: relative;
+      padding-left: 50%;
+    }
 
-		td:before {
-			/* Now like a table header */
-			position: absolute;
-			/* Top/left values mimic padding */
-			top: 0;
-			left: 6px;
-			width: 45%;
-			padding-right: 10px;
-			white-space: nowrap;
-		}
-
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
   }
 
   &__title {
@@ -58,7 +66,6 @@
     margin-top: 2rem;
     border-top: 1px solid #444444;
     border-collapse: collapse;
-
   }
 
   &__edit {
@@ -105,6 +112,10 @@
   justify-content: center;
   text-align: center;
 
+  @include atTablets {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
   @include atMobile {
     display: block;
     width: 100%;
@@ -117,14 +128,14 @@
     border-collapse: collapse;
     margin-top: 1rem;
     margin-bottom: 1rem;
-
   }
   caption {
     font-size: 1rem;
     text-align: left;
     font-weight: bold;
   }
-  th, td {
+  th,
+  td {
     border-bottom: 1px solid #444444;
     padding: 10px;
   }
@@ -141,10 +152,9 @@
     height: auto;
   }
   &__join {
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     font-weight: bold;
     font-size: 1rem;
     margin-top: 10px;
   }
-
 }

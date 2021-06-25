@@ -6,7 +6,7 @@
   text-align: center;
 
   @include atMobile {
-    padding-left: 0;
+    width: 90%;
     padding: 1rem 0.5rem;
   }
 }

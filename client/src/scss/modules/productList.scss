@@ -6,9 +6,8 @@
   margin-top: 8rem;
 
   .active {
-    color: #FFCC33;
+    color: #ffcc33;
   }
-
 
   button {
     background-color: transparent;
@@ -26,11 +25,11 @@
     padding: 0.5rem;
     font-size: 20px;
     border-bottom: 3px solid;
-    border-bottom: 3px solid #FFCC33;
+    border-bottom: 3px solid #ffcc33;
   }
 
   &__item:hover {
-    color: #FFCC33;
+    color: #ffcc33;
     /*border-bottom: 3px solid #FFCC33;*/
   }
 
@@ -39,7 +38,6 @@
     font-size: 20px;
     border-bottom: 3px solid;
   }
-
 }
 
 .productList__title {
@@ -48,6 +46,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @include atTablets {
+    width: 50%;
+  }
 
   &__box {
     /*width: 30%;*/
@@ -72,6 +74,16 @@
       width: 100%;
       height: auto;
       margin-bottom: 0.5rem;
+    }
+  }
+  @include atTablets {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2rem;
+    margin-left: 10%;
+    margin-right: 5%;
+    .product {
+      padding: 0.2rem;
+      font-size: 0.4rem;
     }
   }
   @include atMobile {
