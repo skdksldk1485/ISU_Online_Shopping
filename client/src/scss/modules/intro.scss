@@ -16,13 +16,12 @@
     background-position: center center;
 
     &--intro1 {
-      background-image: url('../../images/introimage1.jpg');
+      background-image: url("../../images/introimage1.jpg");
     }
 
     &--intro2 {
-      background-image: url('../../images/introimage2.jpg');
+      background-image: url("../../images/introimage2.jpg");
     }
-
   }
 
   &__content {
@@ -50,14 +49,17 @@
       margin-top: 1rem;
       border: 2px solid $white;
     }
-
   }
-
 }
 
 .intro__container {
   padding-left: 15%;
   text-align: center;
+
+  @include atMobile {
+    padding-left: 0;
+    padding-bottom: 5%;
+  }
 }
 .intro_products {
   display: grid;
@@ -68,10 +70,31 @@
     text-align: left;
     width: 350px;
     border: none;
+    color: black;
 
     img {
       width: 100%;
-      margin-bottom: 0.5rem;
+    }
+  }
+
+  @include atTablets {
+    grid-template-columns: repeat(3, 2fr);
+    margin-top: 2rem;
+    margin-left: 10%;
+    margin-right: 5%;
+    .product {
+      padding: 0.2rem;
+      width: 100%;
+      font-size: 0.4rem;
+    }
+  }
+  @include atMobile {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20%;
+    .product {
+      padding: 0.2rem;
+      width: 90%;
+      font-size: 0.4rem;
     }
   }
 }

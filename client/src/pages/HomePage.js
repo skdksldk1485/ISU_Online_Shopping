@@ -19,7 +19,7 @@ const HomePage = () => {
 
   const dispatch = useDispatch();
   const productList = useSelector(state => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const { loading, error, products } = productList;
 
   useEffect(() => {
     dispatch(listCurrentProducts());
@@ -87,14 +87,16 @@ const HomePage = () => {
       <section className='section' ref={refSlide1}>
         <div className='section__image section__image--intro1'></div>
         <div className='section__content'>
-
+          <h3>
+            Explore this week's latest collection
+          </h3>
+          <Link to='/shop'>ENTER</Link>
         </div>
       </section>
 
       <section className='section' ref={refSlide2}>
         <div className='section__image section__image--intro2'></div>
         <div className='section__content' ref={revealRef1}>
-        <h1 className='section__content__title'>This season's New Trand</h1>
         <div className='intro__container'>
           {loading ? (
             <Loader />
