@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { Link } from 'react-router-dom';
@@ -47,7 +46,6 @@ const OrderCheckPage = ({ match, history }) => {
       history.push('/login');
     }
     const addPayPalScript = async () => {
-      const { data: clientId } = await axios.get('/api/congig/paypal');
       const script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = `https://www.paypal.com/sdk/js?client-id=ATHoaUPgCKoNOD4pExA8Nx_lszXC5VN2QPGdswTRv5i_v0VPFVIs8jCGdVmcZuMwWNHeV10Z1RMDXhRl`;
