@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import {
@@ -46,9 +47,10 @@ const OrderCheckPage = ({ match, history }) => {
       history.push('/login');
     }
     const addPayPalScript = async () => {
+      const { data: clientId } = await axios.get('/api/congig/paypal');
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = `https://www.paypal.com/sdk/js?client-id=ATHoaUPgCKoNOD4pExA8Nx_lszXC5VN2QPGdswTRv5i_v0VPFVIs8jCGdVmcZuMwWNHeV10Z1RMDXhRl`;
+      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
       script.async = true;
       script.onload = () => {
         setSdkReady(true);
@@ -163,28 +165,28 @@ const OrderCheckPage = ({ match, history }) => {
         <div>
           <h3 className='order__summary__title'>주문 요약</h3>
           <div className='common__list'>
-          <table>
-            <tr>
-              <td>총 상품금액</td>
-              <td><span>${order.itemsPrice}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>배송비</td>
-              <td><span>${order.shippingPrice}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>세금</td>
-              <td><span>${order.taxPrice}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>총 결재금액</td>
-              <td><span>${order.totalPrice}</span>
-              </td>
-            </tr>
-          </table>
+            <table>
+              <tr>
+                <td>총 상품금액</td>
+                <td><span>${order.itemsPrice}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>배송비</td>
+                <td><span>${order.shippingPrice}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>세금</td>
+                <td><span>${order.taxPrice}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>총 결재금액</td>
+                <td><span>${order.totalPrice}</span>
+                </td>
+              </tr>
+            </table>
           </div>
           <div className='order__paypal__btn'>
             {!order.isPaid && (
