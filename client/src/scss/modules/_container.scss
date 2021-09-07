@@ -4,6 +4,7 @@
   margin: auto;
   padding-left: 15%;
   text-align: center;
+  min-height: 100vh;
 
   @include atMobile {
     width: 90%;
