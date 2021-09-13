@@ -81,12 +81,16 @@ const OrderCheckPage = ({ match, history }) => {
   };
 
   return loading ? (
-    <div className='loading'>
-      <Loader />
+    <div className='container'>
+      <div className='loading'>
+        <Loader />
+      </div>
     </div>
   ) : error ? (
-    <div className='error'>
-      <Message>(error)</Message>
+    <div className='container'>
+      <div className='error'>
+        <Message>(error)</Message>
+      </div>
     </div>
   ) : (
     <div className='container'>
