@@ -27,35 +27,89 @@
 <br />
 
 
-### 회원가입 & 로그인 & 로그아웃 
+### ⚡ 회원가입 & 로그인 & 로그아웃 
 ![Animation3](https://user-images.githubusercontent.com/29578054/132527200-79e9d9ab-87b8-4844-9b24-95adec8d65a3.gif)
+<br />
+JWT 토큰를 이용하여 브라우저 저장소(LocalStorage) 전달하여 <br />
+토큰을 생성하고 비워주는 방식으로 로그아웃 기능을 구현하였고,<br />
+Auth 미들웨어를 통해 토큰을 비교하고 사용자(User)가 관리자(Admin)인지 확인할 수 있는 로그인기능을 구현하였습니다.<br />
 
-### 랜딩페이지
+### ⚡ 랜딩페이지
 ![Animation1_2](https://user-images.githubusercontent.com/29578054/132527579-a74cdac8-8119-415c-b5f5-63ba5e510064.gif)
+<br />
+**GSAP**을 이용하여 스크롤 애니메이션을 구현하였고, <br />
+Landing page의 ENTER를 누르면 제품리스트 페이지로 이동할 수 있습니다.
 
-### 제품리스트
+<br />
+
+### ⚡ 제품리스트
 ![Animation2](https://user-images.githubusercontent.com/29578054/132527817-2e48c854-ff81-4d96-953d-8e9d3cab56b7.gif)
+<br />
+**카테고리 필터**와 **페이지네이션** 기능을 구현하여, 카테고리별로 상품 검색을 할 수 있습니다.
 
-### 제품 상세페이지 & 리뷰
+<br />
+
+### ⚡ 제품 상세페이지 & 리뷰
 ![Animation4](https://user-images.githubusercontent.com/29578054/132527893-8b901271-30a1-4cf4-aa56-5903b4de5b07.gif)
+<br />
+제품 상세페이지에서는 **재고확인 & 상품 리뷰 & 장바구니 기능**을 구현하였습니다.
 
-### 검색기능
+<br />
+
+### ⚡ 검색기능
 ![Animation5](https://user-images.githubusercontent.com/29578054/132528184-6c508b02-0f87-46f8-ad35-cfc5c7f9d680.gif)
+<br />
+상단의 돋보기 아이콘을 클릭하면, 검색이 가능한 페이지로 이동되고<br />
+키워드를 입력하면 해당하는 제품을 검색할 수 있도록 구현하였습니다.
 
-### 장바구니
+<br />
+
+### ⚡ 장바구니
 ![Animation6](https://user-images.githubusercontent.com/29578054/132528290-5473d94a-3762-406e-85a1-4d9fad718348.gif)
+<br />
+제품 상세페이지에서 마음에 드는 상품에 대해서 **장바구니 추가**가 가능하며, <br />
+**장바구니 페이지에서 삭제와 수량 변경, 주문** 등의 기능이 가능합니다.
 
-### 주문
-![Animation8](https://user-images.githubusercontent.com/29578054/132529601-13313b6a-b79b-4ffb-ad21-500f421f6dee.gif)
+<br />
 
-### 결제
-![Animation9](https://user-images.githubusercontent.com/29578054/132529640-ac6339a8-ba07-42c7-b83a-86ccea98cd4f.gif)
+### ⚡ 주문
+![Animation_1](https://user-images.githubusercontent.com/29578054/133455801-e70f23ac-36ba-4496-a15f-43b661652787.gif)
+<br />
+사용자가 장바구니에서 주문하기를 누르면 주문 페이지로 넘어가 <br />
+배송지를 입력하고, 결제 방식을 선택, 주문 확인을 하면 결제 페이지로 이동하게 됩니다.
 
-### 프로필
-![Animation10](https://user-images.githubusercontent.com/29578054/132530050-804d6af0-e87b-44be-b882-02ab700140f9.gif)
+<br />
 
-### 관리자 메뉴
+### ⚡ 결제
+![Animation_2](https://user-images.githubusercontent.com/29578054/133455960-bb9d446c-b7c7-41ce-aa58-2232d6de4aff.gif)
+<br />
+**PayPal API**을 통해 결제 기능(페이팔 or 신용카드)을 구현하였습니다.
+
+<br />
+
+### ⚡ 프로필
+![Animation_3](https://user-images.githubusercontent.com/29578054/133455999-546339f3-b1c6-4bc8-a2b3-0701002a6244.gif)
+<br />
+사용자는 프로필에서 **사용자 정보**와 **주문 정보**,  **배송 상태** 등을 확인할 수 있습니다.
+
+<br />
+
+### ⚡ 관리자 메뉴
 ![Animation11](https://user-images.githubusercontent.com/29578054/132530121-d31fe547-f1b8-4a1b-a94e-ffafd90f3ecf.gif)
+<br />
+관리자 페이지에서 사용자(Admin)는 **전체 유저의 목록확인, 유저 정보 수정, 삭제가 가능**하며<br />
+**전체 제품 확인, 등록, 삭제, 수정** 할 수 있도록 각각 **CRUD 기능을 구현**하였습니다.<br />
+주문 목록이 확인 가능하며, 배송이 완료되면 사용자(Admin)는 **배송완료를 클릭하여 유저에게 배송이 완료되었음을 알립니다.**
 
+<br />
 
+## 🌵 후기
+
+이번 프로젝트를 진행하면서 백엔드를 경험해 볼 수 있었습니다.
+Node.js와 express, mongoDB를 사용해 서버와 데이터베이스를 구성하고 구현하는데 시간이 들었지만
+프론트엔드와 요청하고 받아오는 데이터가 어떤 흐름인지 이해하고
+어떻게 클라이언트 화면에 나타낼 수 있는지에 대해 더 깊은 이해를 할 수 있었던 경험이었습니다.
+이번 쇼핑몰 개발을 진행하면서
+RESTful-api에 대한 이해, Redux 를 이용한 상태관리, 토큰을 이용한 회원가입 / 로그인 / 로그아웃 구현, 
+css 전처리기SCSS 를 이용하고 BEM을 따른 스타일링 등을 공부할 수 있었습니다.
 
