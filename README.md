@@ -1,7 +1,9 @@
+## Project
 E-commerce형태의 웹 서비스를 구현한 쇼핑몰 프로젝트입니다.<br />
 
-아래 링크에서 데모 확인이 가능합니다.<br />
->https://isu-shopping.herokuapp.com/
+>아래 링크에서 데모 확인이 가능합니다. <br />
+https://isu-shopping.herokuapp.com/
+<br />
 <br />
 
 #### 사용기술
