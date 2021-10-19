@@ -1,5 +1,6 @@
 ## Project
-E-commerce형태의 웹 서비스를 구현한 쇼핑몰 프로젝트입니다.<br />
+ISU Online Shopping은 쇼핑몰을 주제로 E-commerce형태의 웹 서비스를 구현해보고자<br />
+진행하게 된 프로젝트입니다.
 
 >아래 링크에서 데모 확인이 가능합니다. <br />
 https://isu-shopping.herokuapp.com/
