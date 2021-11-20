@@ -1,13 +1,22 @@
-## Project
+## 👩‍💻프로젝트 
 ISU Online Shopping은 쇼핑몰을 주제로 E-commerce형태의 웹 서비스를 구현해보고자<br />
 진행하게 된 프로젝트입니다.
 
->아래 링크에서 데모 확인이 가능합니다. <br />
-https://isu-shopping.herokuapp.com/
-<br />
 <br />
 
-#### 사용기술
+## 💻 사이트
+
+> 아래 링크에서 프로젝트 데모 확인이 가능합니다. <br />
+- 🎯 사이트 :https://isu-shopping.herokuapp.com/
+
+<br />
+
+## 📆 기간
+  - 2021.02 ~ 2021.05
+
+<br />
+
+## 📗사용기술
 - HTML5 / CSS3
 - JavaScript(ES6+)
 - React
@@ -18,7 +27,23 @@ https://isu-shopping.herokuapp.com/
 - SCSS
 - Gsap
 
-#### 구현기능
+<br />
+
+## 📝담당업무
+- redux로 상태 관리
+- 미들웨어 redux thunk로 비동기 처리
+- react-router 로 SPA 구현
+- font awesome api 로 아이콘 추가
+- JWT 토큰과 LocalStorage를 사용하여 로그인/로그아웃 구현
+- Multer 라이브러리 사용하여 이미지 업로딩 기능 구현
+- Paypal api를 사용하여 페이팔/신용카드 결재 기능 구현
+- BEM 방법론을 적용한 SCSS로 웹 디자인 구성
+- 미디어쿼리로 모바일, 테블릿, PC 크기에 따른 반응형 렌더링 구현
+- MongoDB로 데이터 관리, Express에서 mongoose로 쿼리 실행
+
+<br />
+
+## 📜구현기능
 - 회원가입/로그인/로그아웃
 - 페이지네이션
 - 상품 검색
