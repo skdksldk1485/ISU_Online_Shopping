@@ -17,15 +17,11 @@ ISU Online Shopping은 쇼핑몰을 주제로 E-commerce형태의 웹 서비스�
 <br />
 
 ## 📗사용기술
-- HTML5 / CSS3
-- JavaScript(ES6+)
-- React
-- Redux, Redux-thunk
-- MongoDB, Mongoose
-- Node.js
-- Express
-- SCSS
-- Gsap
+  - Front End
+    - React, React hooks, Redux, Redux-thunk, SCSS, JavaScript(ES6+)
+    
+  - Back End
+    - Node.js, Express, MongoDB, Mongoose
 
 <br />
 
